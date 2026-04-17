@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ATAR MAX Tutoring</title>
+  <style>
+    :root {
+      --navy: #0f2348;
+      --navy-2: #18315f;
+      --white: #ffffff;
+      --cream: #f7f8fb;
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #11203f;
+      --muted: #5c6b86;
+      --red: #f1372d;
+      --orange: #f48a21;
+      --gold: #f5bf27;
+      --shadow: 0 18px 45px rgba(10, 24, 52, 0.16);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max-width: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #f9fbff 0%, #f4f6fb 100%);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(15, 35, 72, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-inner {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--white);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-text span:first-child {
+      font-size: 1rem;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      opacity: 0.8;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(245, 191, 39, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(241, 55, 45, 0.18), transparent 24%),
+        linear-gradient(135deg, var(--navy) 0%, #10284f 55%, var(--navy-2) 100%);
+      color: var(--white);
+      padding: 82px 0 74px;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(4px);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 380px;
+      height: 380px;
+      right: -110px;
+      top: -100px;
+      background: radial-gradient(circle, rgba(245, 191, 39, 0.25), transparent 65%);
+    }
+
+    .hero::after {
+      width: 300px;
+      height: 300px;
+      left: -90px;
+      bottom: -120px;
+      background: radial-gradient(circle, rgba(241, 55, 45, 0.22), transparent 65%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+    }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 4vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+      max-width: 10.5ch;
+    }
+
+    .lead {
+      font-size: 1.08rem;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 64ch;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 14px;
+      font-weight: 800;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, color 0.18s ease;
+      cursor: pointer;
+      border: 1px solid transparent;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, var(--red) 0%, var(--orange) 55%, var(--gold) 100%);
+      color: #101010;
+      box-shadow: 0 14px 32px rgba(244, 138, 33, 0.28);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .hero-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+    }
+
+    .hero-points span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--text);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-card-top {
+      padding: 28px 28px 18px;
+      background: linear-gradient(180deg, rgba(247, 248, 251, 1) 0%, rgba(255, 255, 255, 1) 100%);
+    }
+
+    .hero-logo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 8px 0 14px;
+    }
+
+    .hero-logo {
+      width: min(100%, 330px);
+      border-radius: 22px;
+      box-shadow: 0 10px 28px rgba(15, 35, 72, 0.12);
+    }
+
+    .hero-card-bottom {
+      padding: 0 28px 28px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .mini-card {
+      background: #f7f9fc;
+      border: 1px solid rgba(17, 32, 63, 0.08);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .mini-card strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+
+    .mini-card span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .section {
+      padding: 70px 0;
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, #ffffff 0%, #f8f9fc 100%);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 26px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.9rem, 2.8vw, 3rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .grid-3,
+    .grid-2,
+    .subject-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .subject-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 22px;
+      padding: 24px;
+      border: 1px solid rgba(17, 32, 63, 0.08);
+      box-shadow: 0 14px 38px rgba(17, 32, 63, 0.06);
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: var(--navy);
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--navy);
+      background: linear-gradient(90deg, rgba(245, 191, 39, 0.18), rgba(244, 138, 33, 0.14), rgba(241, 55, 45, 0.12));
+      border: 1px solid rgba(241, 55, 45, 0.08);
+    }
+
+    .highlight-card {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: var(--white);
+      border: 0;
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-card h3,
+    .highlight-card p,
+    .highlight-card li {
+      color: var(--white);
+    }
+
+    .highlight-card .pill {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .subject-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fbfcfe 100%);
+      border: 1px solid rgba(17, 32, 63, 0.08);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 10px 30px rgba(17, 32, 63, 0.05);
+    }
+
+    .subject-card h3 {
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: 1.02rem;
+    }
+
+    .subject-card p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    .steps {
+      counter-reset: step;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .step {
+      position: relative;
+      background: var(--white);
+      border: 1px solid rgba(17, 32, 63, 0.08);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 14px 38px rgba(17, 32, 63, 0.06);
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #111;
+      background: linear-gradient(90deg, var(--gold), var(--orange), var(--red));
+      margin-bottom: 16px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .contact-panel {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: var(--white);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-panel h2,
+    .contact-panel p,
+    .contact-panel li {
+      color: var(--white);
+    }
+
+    .contact-panel ul {
+      padding-left: 18px;
+      margin-bottom: 0;
+    }
+
+    .form-card {
+      background: var(--white);
+      border-radius: 26px;
+      padding: 28px;
+      border: 1px solid rgba(17, 32, 63, 0.08);
+      box-shadow: 0 16px 38px rgba(17, 32, 63, 0.07);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .two-col {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    label {
+      display: grid;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--navy);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(17, 32, 63, 0.12);
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 14px 14px;
+      font: inherit;
+      color: var(--text);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .footer {
+      background: #0b1b38;
+      color: rgba(255, 255, 255, 0.82);
+      padding: 28px 0 36px;
+      font-size: 0.94rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid,
+      .contact-grid,
+      .grid-3,
+      .grid-2,
+      .steps,
+      .subject-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .hero {
+        padding: 64px 0 56px;
+      }
+
+      .two-col,
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <img src="images/atar-max-logo.png" alt="ATAR MAX Tutoring logo" class="brand-logo" />
+        <div class="brand-text">
+          <span>ATAR MAX</span>
+          <span>TUTORING</span>
+        </div>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Enquire</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Band 6 tutors, all subjects, online and small group support</div>
+        <h1>High-quality tutoring, built around the student.</h1>
+        <p class="lead">
+          ATAR MAX Tutoring is a team-based tutoring service offering support across all major school subjects. We match students with tutors who achieved a Band 6 in the subjects they teach, and who teach in the style they do best, so every lesson is clear, personal, and genuinely effective.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Book an enquiry</a>
+          <a class="btn btn-secondary" href="#services">Explore services</a>
+        </div>
+        <div class="hero-points">
+          <span>Years 7 to 12</span>
+          <span>All major subjects</span>
+          <span>1 on 1 and small group classes</span>
+          <span>Online tutoring available</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-top">
+          <div class="hero-logo-wrap">
+            <img src="images/atar-max-logo.png" alt="ATAR MAX Tutoring logo" class="hero-logo" />
+          </div>
+        </div>
+        <div class="hero-card-bottom">
+          <h3>Why families choose ATAR MAX</h3>
+          <p class="small">A professional tutoring service with a simple promise, strong subject knowledge, flexible teaching, and support that actually fits the student.</p>
+          <div class="mini-grid">
+            <div class="mini-card">
+              <strong>Band 6 tutors</strong>
+              <span>Every tutor teaches a subject they excelled in.</span>
+            </div>
+            <div class="mini-card">
+              <strong>All subjects</strong>
+              <span>Support across English, Maths, Sciences, Humanities, and more.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Flexible teaching</strong>
+              <span>Tutors teach in the style that gets their best results.</span>
+            </div>
+            <div class="mini-card">
+              <strong>Small online groups</strong>
+              <span>Ideal for students who want focused support in a collaborative format.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Our tutoring services</h2>
+        <p>We work with students at different levels, across different subjects, and with different goals. Some want confidence. Some want structure. Some want top marks. We build lessons around what each student actually needs.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>One-on-one tutoring</h3>
+          <p>Personalised sessions for students who want direct support, detailed feedback, and consistent progress in a specific subject.</p>
+          <div class="pill-row">
+            <span class="pill">Tailored lesson plans</span>
+            <span class="pill">Targeted feedback</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Small online group classes</h3>
+          <p>Focused online classes in small groups, ideal for students who benefit from collaboration while still receiving clear, structured teaching.</p>
+          <div class="pill-row">
+            <span class="pill">Interactive</span>
+            <span class="pill">Affordable</span>
+          </div>
+        </article>
+
+        <article class="card highlight-card">
+          <h3>School and exam preparation</h3>
+          <p>Assessment support, revision, exam strategy, and help building the study habits students need to perform with confidence.</p>
+          <div class="pill-row">
+            <span class="pill">Assessments</span>
+            <span class="pill">Exams</span>
+            <span class="pill">Study systems</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="subjects">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Support across all major subjects</h2>
+        <p>Because we operate as a tutoring business with multiple tutors, we can offer broad subject coverage rather than limiting families to one tutor’s specialities.</p>
+      </div>
+
+      <div class="subject-grid">
+        <article class="subject-card">
+          <h3>English</h3>
+          <p>Essay writing, textual analysis, creative writing, and exam responses.</p>
+        </article>
+        <article class="subject-card">
+          <h3>Mathematics</h3>
+          <p>Core skills, confidence building, and extension-level support.</p>
+        </article>
+        <article class="subject-card">
+          <h3>Science</h3>
+          <p>Biology, Chemistry, Physics, and general science support.</p>
+        </article>
+        <article class="subject-card">
+          <h3>Humanities</h3>
+          <p>History, Legal Studies, Business Studies, Economics, and more.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why-us">
+    <div class="container">
+      <div class="section-heading">
+        <h2>Why choose us</h2>
+        <p>There are plenty of tutoring businesses. Our advantage is not just that our tutors are strong students, it is that they teach the subjects they genuinely know and teach them in the way they do best.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <h3>Every tutor achieved a Band 6 in the subject they tutor</h3>
+          <p>That means families are not simply getting general academic support. They are getting a tutor with proven performance in the specific subject being taught, which gives students stronger explanations, better insight into assessments, and more confidence in the advice they receive.</p>
+        </article>
+
+        <article class="card">
+          <h3>Our tutors are not forced into a rigid teaching script</h3>
+          <p>Many tutoring centres require tutors to follow one strict method. We do the opposite. We let tutors teach in the style that gets their best results, which creates lessons that feel more natural, more engaging, and better suited to different learners.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="process">
+    <div class="container">
+      <div class="section-heading">
+        <h2>How it works</h2>
+        <p>We keep the process simple so families can move from enquiry to support quickly.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <h3>Submit an enquiry</h3>
+          <p>Tell us the student’s year group, subject, goals, and whether you are interested in one-on-one tutoring or a small online class.</p>
+        </article>
+        <article class="step">
+          <h3>We match the student</h3>
+          <p>We review the enquiry and pair the student with the tutor, or class option, that best fits their subject and learning needs.</p>
+        </article>
+        <article class="step">
+          <h3>Lessons begin</h3>
+          <p>Once details are confirmed, we organise the first session and begin building momentum with clear teaching and practical support.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-panel">
+        <h2>Enquire with ATAR MAX</h2>
+        <p>Use the form to get in touch and let us know what support you are looking for. We can help with subject tutoring, exam preparation, and small online group options.</p>
+        <ul>
+          <li>Years 7 to 12 support</li>
+          <li>All major school subjects</li>
+          <li>Band 6 tutors only</li>
+          <li>Online and flexible lesson options</li>
+        </ul>
+      </div>
+
+      <div class="form-card">
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+          <div class="two-col">
+            <label>
+              Parent or student name
+              <input type="text" name="name" placeholder="Your name" required />
+            </label>
+            <label>
+              Email address
+              <input type="email" name="email" placeholder="you@example.com" required />
+            </label>
+          </div>
+
+          <div class="two-col">
+            <label>
+              Year level
+              <select name="year_level" required>
+                <option value="">Select a year</option>
+                <option>Year 7</option>
+                <option>Year 8</option>
+                <option>Year 9</option>
+                <option>Year 10</option>
+                <option>Year 11</option>
+                <option>Year 12</option>
+              </select>
+            </label>
+            <label>
+              Subject needed
+              <input type="text" name="subject" placeholder="English, Maths, Biology, Legal Studies, etc." required />
+            </label>
+          </div>
+
+          <label>
+            Preferred format
+            <select name="format" required>
+              <option value="">Select an option</option>
+              <option>One-on-one tutoring</option>
+              <option>Small online group class</option>
+              <option>Not sure yet</option>
+            </select>
+          </label>
+
+          <label>
+            Message
+            <textarea name="message" placeholder="Tell us what support you are looking for, the student’s goals, and any important details." required></textarea>
+          </label>
+
+          <button class="btn btn-primary" type="submit">Send enquiry</button>
+          <p class="small">Replace the Formspree form ID with your own before publishing the live website.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>ATAR MAX Tutoring</div>
+      <div>Add your business email, suburb or service area, and any final contact details here.</div>
+    </div>
+  </footer>
+</body>
+</html>
