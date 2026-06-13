@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ATAR MAX Tutoring — Band 6 tutors, all subjects</title>
-  <meta name="description" content="ATAR MAX Tutoring matches Years 7–12 students with tutors who achieved a Band 6 in the subject they teach. One-on-one tutoring and small online group classes across all major subjects." />
-  <meta name="theme-color" content="#f5f5f7" />
+  <title>ATAR MAX Tutoring — Band 6 Tutors, Years 7–12 | Free Consultation</title>
+  <meta name="description" content="ATAR MAX matches Years 7–12 students with tutors who achieved a Band 6 in the subject they teach. One-on-one and small online group classes across every major subject. Enquire for a free, no-obligation consultation." />
+  <meta name="theme-color" content="#0a0f1c" />
   <link rel="canonical" href="https://atarmaxtutoring.com/" />
-  <meta property="og:title" content="ATAR MAX Tutoring — Band 6 tutors, all subjects" />
-  <meta property="og:description" content="One-on-one tutoring and small online group classes for Years 7–12, taught by tutors who achieved a Band 6 in the subjects they teach." />
+  <meta property="og:title" content="ATAR MAX Tutoring — Band 6 tutors. Every subject. Free consultation." />
+  <meta property="og:description" content="Give your child the launchpad they deserve. Band 6 tutors for Years 7–12, every major subject. Your first consultation is free." />
   <meta property="og:url" content="https://atarmaxtutoring.com/" />
   <meta property="og:image" content="https://atarmaxtutoring.com/images/atar-max-logo.png" />
   <meta property="og:type" content="website" />
@@ -18,36 +18,38 @@
   <link rel="manifest" href="/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "ATAR MAX Tutoring",
+    "url": "https://atarmaxtutoring.com/",
+    "email": "atarmaxtutoring@gmail.com",
+    "description": "Tutoring for Years 7–12 across all major subjects, taught by tutors who achieved a Band 6 in the subjects they teach. One-on-one and small online group classes. Free initial consultation.",
+    "logo": "https://atarmaxtutoring.com/images/atar-max-logo.png"
+  }
+  </script>
 
   <style>
     :root {
-      /* surfaces */
-      --fog: #f5f5f7;
-      --snow: #ffffff;
-      --silver: #e8e8ed;
-      --ink: #1d1d1f;
-      --graphite: #6e6e73;
+      --void: #060a14;
+      --navy-deep: #0a0f1c;
       --navy: #131c2e;
-      --navy-deep: #0c1322;
-
-      /* brand accents — flame is the single CTA colour */
-      --flame: #f1372d;
-      --flame-press: #d62a21;
+      --navy-soft: #1b2740;
+      --white: #f4f6fb;
+      --dim: rgba(244, 246, 251, 0.66);
+      --faint: rgba(244, 246, 251, 0.4);
+      --red: #f1372d;
       --orange: #f48a21;
       --gold: #f5bf27;
-      --link: #c2410c;
-
-      /* theatrical stage gradient (backdrop only, never UI chrome) */
-      --stage: linear-gradient(184deg, #0c1322 0%, #131c2e 30%, #7e1d18 58%, #f1372d 74%, #f48a21 88%, #f5bf27 100%);
-
-      --radius-card: 28px;
-      --radius-input: 12px;
-      --max-width: 1100px;
-      --nav-h: 52px;
-      --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
-      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --flame-grad: linear-gradient(100deg, var(--gold) 0%, var(--orange) 45%, var(--red) 100%);
+      --glass: rgba(12, 19, 34, 0.55);
+      --glass-line: rgba(255, 255, 255, 0.12);
+      --radius: 24px;
       --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+      --max: 1140px;
     }
 
     * { box-sizing: border-box; }
@@ -57,21 +59,17 @@
       margin: 0;
       font-family: var(--font);
       font-size: 17px;
+      line-height: 1.6;
       letter-spacing: -0.003em;
-      line-height: 1.47;
-      color: var(--ink);
-      background: var(--fog);
+      color: var(--white);
+      background: var(--void);
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
 
     a { color: inherit; text-decoration: none; }
-    img, svg { max-width: 100%; display: block; }
+    img { max-width: 100%; display: block; }
     h1, h2, h3, p { margin: 0; }
-
-    .container {
-      width: min(calc(100% - 44px), var(--max-width));
-      margin: 0 auto;
-    }
 
     ::selection { background: var(--gold); color: var(--navy); }
 
@@ -81,929 +79,881 @@
       border-radius: 6px;
     }
 
-    /* ============ typography ============ */
-    .display {
-      font-size: clamp(46px, 8vw, 92px);
-      font-weight: 800;
-      letter-spacing: -0.022em;
-      line-height: 1.04;
-    }
-
-    .h-lg {
-      font-size: clamp(34px, 4.6vw, 56px);
+    .skip-link {
+      position: fixed;
+      top: -60px;
+      left: 16px;
+      z-index: 200;
+      background: var(--gold);
+      color: var(--navy);
       font-weight: 700;
-      letter-spacing: -0.016em;
-      line-height: 1.07;
-    }
-
-    .h-md {
-      font-size: clamp(26px, 3.2vw, 40px);
-      font-weight: 700;
-      letter-spacing: -0.015em;
-      line-height: 1.17;
-    }
-
-    .h-sm {
-      font-size: 24px;
-      font-weight: 600;
-      letter-spacing: -0.015em;
-      line-height: 1.29;
-    }
-
-    .sub {
-      font-size: clamp(18px, 2vw, 22px);
-      font-weight: 400;
-      letter-spacing: -0.01em;
-      line-height: 1.4;
-      color: var(--graphite);
-    }
-
-    .body-copy { color: var(--graphite); }
-
-    .kicker {
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--link);
-      margin-bottom: 14px;
-    }
-
-    /* ============ buttons — solid pills only ============ */
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border: 0;
+      padding: 10px 18px;
       border-radius: 999px;
-      padding: 13px 26px;
-      font-family: var(--font);
-      font-size: 17px;
-      font-weight: 600;
-      letter-spacing: -0.006em;
-      cursor: pointer;
-      transition: background 0.2s var(--ease), transform 0.2s var(--ease), color 0.2s var(--ease);
+      transition: top 0.2s ease;
+    }
+    .skip-link:focus { top: 14px; }
+
+    /* ---------- the living world ---------- */
+    #world {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      display: block;
     }
 
-    .pill:active { transform: scale(0.97); }
+    /* graceful fallback when WebGL is unavailable / reduced motion */
+    .no-webgl #world { display: none; }
+    .no-webgl body, .no-webgl .page-bg { background: radial-gradient(1200px 700px at 70% -10%, rgba(244, 138, 33, 0.18), transparent 60%), radial-gradient(900px 600px at 10% 110%, rgba(241, 55, 45, 0.14), transparent 55%), linear-gradient(180deg, #060a14 0%, #0d1526 45%, #131c2e 100%); }
 
-    .pill-flame { background: var(--flame); color: #fff; }
-    .pill-flame:hover { background: var(--flame-press); }
-
-    .pill-dark { background: var(--navy); color: #fff; }
-    .pill-dark:hover { background: var(--navy-deep); }
-
-    .pill-light { background: #fff; color: var(--navy); }
-    .pill-light:hover { background: var(--silver); }
-
-    .pill-sm { padding: 8px 18px; font-size: 14px; }
-
-    .text-link {
-      color: var(--link);
-      font-weight: 500;
+    .vignette {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: radial-gradient(130% 100% at 50% 45%, transparent 55%, rgba(3, 6, 12, 0.55) 100%);
     }
 
-    .text-link::after { content: " ›"; }
-    .text-link:hover { text-decoration: underline; }
+    .grain {
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      opacity: 0.05;
+      mix-blend-mode: overlay;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+    }
 
-    /* ============ global nav ============ */
+    /* ---------- nav ---------- */
     .nav {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 90;
-      height: var(--nav-h);
-      background: rgba(245, 245, 247, 0.78);
-      backdrop-filter: blur(20px) saturate(1.6);
-      -webkit-backdrop-filter: blur(20px) saturate(1.6);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.07);
-    }
-
-    .nav-inner {
-      height: 100%;
+      left: 0;
+      right: 0;
+      z-index: 100;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 16px;
+      padding: 14px clamp(18px, 4vw, 42px);
+      transition: background 0.4s ease, backdrop-filter 0.4s ease;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      letter-spacing: 0.01em;
-      font-size: 15px;
-      color: var(--ink);
+    .nav.scrolled {
+      background: rgba(6, 10, 20, 0.6);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .mark-tile {
-      background: var(--navy);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      aspect-ratio: 1;
-      flex: none;
-    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { width: 40px; height: auto; filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.5)); }
 
-    .mark-tile img { width: 76%; height: auto; }
-
-    .brand .mark-tile { width: 36px; border-radius: 9px; }
-
-    .brand small {
-      font-size: 9px;
-      font-weight: 600;
-      letter-spacing: 0.34em;
-      color: var(--graphite);
-      display: block;
-      line-height: 1.1;
-    }
+    .brand-text { line-height: 1.05; }
+    .brand-text b { font-size: 15px; font-weight: 800; letter-spacing: 0.04em; display: block; }
+    .brand-text span { font-size: 9px; font-weight: 600; letter-spacing: 0.42em; color: var(--gold); }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
-      font-size: 13px;
-      font-weight: 500;
-      color: rgba(29, 29, 31, 0.85);
-    }
-
-    .nav-links a:not(.pill):hover { color: var(--flame); }
-
-    .nav-burger {
-      display: none;
-      background: none;
-      border: 0;
-      padding: 10px;
-      cursor: pointer;
-    }
-
-    .nav-burger span {
-      display: block;
-      width: 18px;
-      height: 1.5px;
-      background: var(--ink);
-      margin: 4.5px 0;
-      transition: transform 0.25s var(--ease), opacity 0.25s var(--ease);
-    }
-
-    .nav-burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-    .nav-burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
-    .nav-burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-
-    /* ============ scroll scenes ============ */
-    .scene { position: relative; }
-    .scene-pin {
-      position: sticky;
-      top: 0;
-      height: 100vh;
-      height: 100svh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    /* hero scene — the enquiry sheet overlaps its final viewport-height of scroll */
-    .scene-hero { height: 230vh; background: var(--fog); }
-
-    .sheet {
-      position: relative;
-      z-index: 5;
-      margin-top: -100vh;
-      margin-top: -100svh;
-      border-radius: 28px 28px 0 0;
-      box-shadow: 0 -16px 48px rgba(19, 28, 46, 0.10);
-    }
-
-    .hero-copy {
-      text-align: center;
-      padding: calc(var(--nav-h) + 28px) 22px 0;
-      max-width: 800px;
-      will-change: transform, opacity;
-    }
-
-    .hero-eyebrow {
-      font-size: clamp(17px, 2vw, 22px);
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      margin-bottom: 10px;
-    }
-
-    .hero-copy .display { color: var(--ink); }
-    .hero-copy .display .accent { color: var(--flame); }
-
-    .hero-sub { margin: 18px auto 26px; max-width: 56ch; }
-
-    .hero-ctas {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       gap: 26px;
-      flex-wrap: wrap;
-    }
-
-    .hero-mark {
-      margin-top: clamp(18px, 4vh, 44px);
-      width: clamp(210px, 32vh, 330px);
-      will-change: transform, opacity;
-    }
-
-    .hero-tile { width: 100%; border-radius: 22%; }
-
-    .hero-hint {
-      position: absolute;
-      bottom: 22px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 12px;
+      font-size: 13.5px;
       font-weight: 500;
-      color: var(--graphite);
-      opacity: 0.8;
-      animation: hint 2.4s var(--ease) infinite;
+      color: var(--dim);
     }
 
-    @keyframes hint {
-      0%, 100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, 6px); }
-    }
+    .nav-links a:not(.pill):hover { color: var(--gold); }
 
-    /* ============ section rhythm: alternating fog/snow bands ============ */
-    .band { padding: clamp(76px, 10vw, 120px) 0; }
-    .band-snow { background: var(--snow); }
-    .band-fog { background: var(--fog); }
+    @media (max-width: 880px) { .nav-links a:not(.pill) { display: none; } }
 
-    .band-heading { max-width: 720px; margin-bottom: clamp(36px, 5vw, 56px); }
-    .band-heading .sub { margin-top: 14px; }
-    .band-heading.center { margin-left: auto; margin-right: auto; text-align: center; }
-
-    /* ============ enquiry section ============ */
-    .enquiry-card {
-      background: var(--snow);
-      border-radius: var(--radius-card);
-      display: grid;
-      grid-template-columns: 0.85fr 1.15fr;
-      overflow: hidden;
-    }
-
-    .band-snow .enquiry-card { background: var(--fog); }
-
-    .enquiry-intro {
-      padding: clamp(32px, 4vw, 52px);
-      background: var(--navy);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .enquiry-intro .kicker { color: var(--gold); }
-    .enquiry-intro h2 { color: #fff; }
-    .enquiry-intro .sub { color: rgba(255, 255, 255, 0.72); margin-top: 12px; }
-
-    .check-list {
-      list-style: none;
-      padding: 0;
-      margin: 28px 0 0;
-      display: grid;
-      gap: 14px;
-    }
-
-    .check-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 500;
-      font-size: 15px;
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    .check-list .ck {
-      flex: none;
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
+    /* ---------- buttons ---------- */
+    .pill {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 28px;
+      font-family: var(--font);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.005em;
+      cursor: pointer;
+      color: #fff;
+      background: var(--red);
+      box-shadow: 0 8px 32px rgba(241, 55, 45, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18);
+      transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out), background 0.25s ease;
+    }
+
+    .pill:hover { transform: translateY(-2px); background: #ff4438; box-shadow: 0 14px 44px rgba(241, 55, 45, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.18); }
+    .pill:active { transform: translateY(0) scale(0.98); }
+
+    .pill-sm { padding: 10px 20px; font-size: 14px; }
+
+    .pill-ghost {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: none;
+      color: var(--white);
+    }
+    .pill-ghost:hover { background: rgba(255, 255, 255, 0.12); box-shadow: none; }
+
+    .free-note {
+      display: block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--faint);
+      letter-spacing: 0.02em;
+    }
+    .free-note b { color: var(--gold); font-weight: 600; }
+
+    /* ---------- journey rail ---------- */
+    .rail {
+      position: fixed;
+      right: clamp(14px, 2.4vw, 30px);
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 90;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .rail a {
+      position: relative;
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.22);
+      transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .rail a:hover { background: rgba(255, 255, 255, 0.55); }
+
+    .rail a.on {
+      background: var(--gold);
+      transform: scale(1.35);
+      box-shadow: 0 0 14px rgba(245, 191, 39, 0.8);
+    }
+
+    .rail a span {
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%) translateX(6px);
+      white-space: nowrap;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .rail a:hover span, .rail a.on span { opacity: 1; transform: translateY(-50%) translateX(0); }
+
+    @media (max-width: 760px) { .rail { display: none; } }
+
+    /* ---------- stations ---------- */
+    main { position: relative; z-index: 2; }
+
+    .station {
+      position: relative;
+      min-height: 150vh;
+      display: flex;
+      align-items: center;
+      padding: 18vh clamp(20px, 5vw, 60px);
+    }
+
+    .station-inner { width: min(100%, var(--max)); margin: 0 auto; }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+    }
+
+    .kicker::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--flame-grad);
+      border-radius: 2px;
+    }
+
+    .mega {
+      font-size: clamp(3rem, 9.5vw, 8.2rem);
+      font-weight: 900;
+      letter-spacing: -0.035em;
+      line-height: 0.96;
+      text-wrap: balance;
+    }
+
+    .mega .flame {
+      background: var(--flame-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      filter: drop-shadow(0 0 28px rgba(244, 138, 33, 0.35));
+    }
+
+    .h2 {
+      font-size: clamp(2.2rem, 5.4vw, 4.4rem);
+      font-weight: 850;
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+      text-wrap: balance;
+    }
+
+    .sub {
+      font-size: clamp(17px, 1.9vw, 21px);
+      font-weight: 350;
+      line-height: 1.55;
+      color: var(--dim);
+      max-width: 56ch;
+    }
+
+    .text-shadow { text-shadow: 0 2px 30px rgba(3, 6, 12, 0.8), 0 0 80px rgba(3, 6, 12, 0.6); }
+
+    /* ---------- hero ---------- */
+    #launch { min-height: 200vh; align-items: flex-start; padding-top: 0; }
+
+    .hero-stack {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 70px;
+      position: sticky;
+      top: 0;
+    }
+
+    .hero-stack .mega { max-width: 11ch; }
+    .hero-stack .sub { margin: 26px 0 34px; }
+
+    .hero-ctas { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 44px;
+    }
+
+    .chip {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: var(--dim);
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(10, 15, 28, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .chip i {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 99px;
+      margin-right: 8px;
+      background: var(--gold);
+      vertical-align: 1px;
+    }
+    .chip:nth-child(2) i { background: var(--orange); }
+    .chip:nth-child(3) i { background: var(--red); }
+    .chip:nth-child(4) i { background: var(--gold); }
+
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .scroll-cue .line {
+      width: 1px;
+      height: 44px;
+      background: linear-gradient(180deg, var(--gold), transparent);
+      animation: cue 2.2s var(--ease-out) infinite;
+      transform-origin: top;
+    }
+
+    @keyframes cue {
+      0% { transform: scaleY(0); opacity: 0; }
+      35% { transform: scaleY(1); opacity: 1; }
+      100% { transform: scaleY(1) translateY(26px); opacity: 0; }
+    }
+
+    /* ---------- glass cards ---------- */
+    .glass {
+      background: var(--glass);
+      border: 1px solid var(--glass-line);
+      border-radius: var(--radius);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 24px 80px rgba(2, 5, 12, 0.5);
+    }
+
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 54px;
+    }
+
+    .stat {
+      padding: 30px 28px;
+      transition: transform 0.5s var(--ease-out), border-color 0.4s ease;
+    }
+
+    .stat:hover { transform: translateY(-6px); border-color: rgba(245, 191, 39, 0.35); }
+
+    .stat .big {
+      font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      line-height: 1;
+      background: var(--flame-grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .stat h3 { font-size: 17px; font-weight: 700; margin: 14px 0 6px; }
+    .stat p { font-size: 14.5px; color: var(--dim); }
+
+    /* ---------- journey steps ---------- */
+    .steps { display: grid; gap: 18px; margin-top: 54px; max-width: 640px; }
+
+    .step {
+      display: flex;
+      gap: 22px;
+      padding: 26px 28px;
+      align-items: flex-start;
+      transition: transform 0.5s var(--ease-out), border-color 0.4s ease;
+    }
+
+    .step:hover { transform: translateX(8px); border-color: rgba(245, 191, 39, 0.35); }
+
+    .step .num {
+      flex: none;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--navy);
+      background: var(--flame-grad);
+      border-radius: 999px;
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 22px rgba(244, 138, 33, 0.4);
+    }
+
+    .step h3 { font-size: 18px; font-weight: 750; margin-bottom: 5px; }
+    .step p { font-size: 15px; color: var(--dim); }
+    .step .free-tag {
+      display: inline-block;
+      margin-left: 10px;
       font-size: 11px;
       font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       color: var(--navy);
       background: var(--gold);
+      border-radius: 999px;
+      padding: 3px 10px;
+      vertical-align: 2px;
     }
 
-    .check-list li:nth-child(2) .ck { background: var(--orange); }
-    .check-list li:nth-child(3) .ck { background: var(--flame); color: #fff; }
-    .check-list li:nth-child(4) .ck { background: var(--gold); }
+    /* ---------- subjects constellation ---------- */
+    .subjects-wrap { margin-top: 54px; display: flex; flex-wrap: wrap; gap: 12px; max-width: 760px; }
 
-    .enquiry-email {
-      margin-top: auto;
-      padding-top: 30px;
-      font-size: 14px;
-      color: rgba(255, 255, 255, 0.6);
+    .subject {
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(10, 15, 28, 0.45);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      color: var(--white);
+      transition: transform 0.45s var(--ease-out), border-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
     }
 
-    .enquiry-email a { color: var(--gold); font-weight: 600; }
-    .enquiry-email a:hover { text-decoration: underline; }
+    .subject:hover {
+      transform: translateY(-4px);
+      border-color: var(--gold);
+      box-shadow: 0 0 24px rgba(245, 191, 39, 0.25);
+    }
 
-    .enquiry-form { padding: clamp(32px, 4vw, 52px); }
+    .subject.more { color: var(--gold); border-style: dashed; }
+
+    /* ---------- summit ---------- */
+    #summit .station-inner { text-align: center; }
+    #summit .sub { margin: 26px auto 0; }
+
+    .summit-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin: 54px auto 0;
+      max-width: 880px;
+      text-align: left;
+    }
+
+    .summit-points .glass { padding: 30px; transition: transform 0.5s var(--ease-out), border-color 0.4s ease; }
+    .summit-points .glass:hover { transform: translateY(-6px); border-color: rgba(245, 191, 39, 0.35); }
+    .summit-points h3 { font-size: 18px; font-weight: 750; margin-bottom: 8px; }
+    .summit-points p { font-size: 15px; color: var(--dim); }
+
+    /* ---------- FAQ ---------- */
+    #faq { min-height: 120vh; }
+    .faq-list { margin-top: 44px; max-width: 760px; display: grid; gap: 12px; }
+
+    details.faq {
+      background: var(--glass);
+      border: 1px solid var(--glass-line);
+      border-radius: 18px;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      overflow: hidden;
+      transition: border-color 0.3s ease;
+    }
+
+    details.faq[open] { border-color: rgba(245, 191, 39, 0.35); }
+
+    details.faq summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 20px 24px;
+      font-size: 17px;
+      font-weight: 650;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    details.faq summary::-webkit-details-marker { display: none; }
+
+    details.faq summary::after {
+      content: "+";
+      flex: none;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--gold);
+      transition: transform 0.35s var(--ease-out);
+    }
+
+    details.faq[open] summary::after { transform: rotate(45deg); }
+
+    details.faq .a { padding: 0 24px 22px; font-size: 15.5px; color: var(--dim); max-width: 62ch; }
+
+    /* ---------- enquire ---------- */
+    #enquire { min-height: 160vh; }
+
+    .enquire-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .enquire-intro { padding: clamp(28px, 3.5vw, 46px); display: flex; flex-direction: column; }
+    .enquire-intro .h2 { font-size: clamp(2rem, 3.6vw, 3rem); }
+    .enquire-intro .sub { margin-top: 14px; font-size: 17px; }
+
+    .promise-list { list-style: none; padding: 0; margin: 30px 0 0; display: grid; gap: 14px; }
+
+    .promise-list li { display: flex; gap: 13px; align-items: flex-start; font-size: 15px; color: var(--dim); }
+    .promise-list li b { color: var(--white); font-weight: 650; }
+
+    .promise-list .ok {
+      flex: none;
+      width: 22px;
+      height: 22px;
+      margin-top: 1px;
+      border-radius: 999px;
+      background: var(--flame-grad);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .enquire-email { margin-top: auto; padding-top: 28px; font-size: 14px; color: var(--faint); }
+    .enquire-email a { color: var(--gold); font-weight: 600; }
+    .enquire-email a:hover { text-decoration: underline; }
+
+    .form-card { padding: clamp(28px, 3.5vw, 46px); }
 
     form { display: grid; gap: 16px; }
-
     .two-col { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); }
 
     label {
       display: grid;
-      gap: 7px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: -0.003em;
-      color: var(--ink);
+      gap: 8px;
+      font-size: 13.5px;
+      font-weight: 650;
+      letter-spacing: 0.01em;
+      color: var(--white);
     }
 
     input, select, textarea {
       width: 100%;
-      border: 1px solid transparent;
-      background: var(--silver);
-      border-radius: var(--radius-input);
-      padding: 13px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.06);
+      border-radius: 13px;
+      padding: 14px;
       font: inherit;
       font-size: 16px;
-      color: var(--ink);
-      transition: background 0.2s var(--ease), border-color 0.2s var(--ease), box-shadow 0.2s var(--ease);
+      color: var(--white);
+      transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
     }
 
-    .band-fog input, .band-fog select, .band-fog textarea { background: #ececf0; }
+    select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23f5bf27' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 16px center; }
+    select option { background: var(--navy); color: var(--white); }
 
-    /* enquiry card sits recessed on the white sheet: white input wells with a hairline border */
-    .band-snow .enquiry-form input,
-    .band-snow .enquiry-form select,
-    .band-snow .enquiry-form textarea {
-      background: #fff;
-      border-color: rgba(22, 33, 58, 0.12);
-    }
-
-    input::placeholder, textarea::placeholder { color: #98989d; }
+    input::placeholder, textarea::placeholder { color: rgba(244, 246, 251, 0.35); }
 
     input:focus, select:focus, textarea:focus {
       outline: none;
-      background: #fff;
-      border-color: var(--orange);
-      box-shadow: 0 0 0 4px rgba(244, 138, 33, 0.18);
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.09);
+      box-shadow: 0 0 0 4px rgba(245, 191, 39, 0.15);
     }
 
-    textarea { min-height: 120px; resize: vertical; }
+    textarea { min-height: 110px; resize: vertical; }
 
-    .form-foot {
-      font-size: 12px;
-      letter-spacing: -0.003em;
-      color: var(--graphite);
-    }
+    .form-foot { font-size: 12.5px; color: var(--faint); }
+    .form-foot b { color: var(--gold); font-weight: 600; }
 
-    .form-status {
-      display: none;
-      border-radius: var(--radius-input);
-      padding: 14px 16px;
-      font-size: 15px;
-      font-weight: 500;
-    }
+    .form-status { display: none; border-radius: 13px; padding: 14px 16px; font-size: 15px; font-weight: 550; }
+    .form-status.err { display: block; background: rgba(241, 55, 45, 0.14); border: 1px solid rgba(241, 55, 45, 0.4); color: #ffb1ab; }
 
-    .form-status.err {
-      display: block;
-      background: rgba(241, 55, 45, 0.08);
-      color: #b3271f;
-    }
-
-    .form-success {
-      display: none;
-      text-align: center;
-      padding: clamp(48px, 7vw, 90px) 30px;
-    }
-
+    .form-success { display: none; text-align: center; padding: clamp(40px, 6vw, 80px) 26px; }
     .form-success .ok-ring {
-      width: 60px;
-      height: 60px;
+      width: 64px;
+      height: 64px;
       border-radius: 999px;
-      background: var(--flame);
-      color: #fff;
+      background: var(--flame-grad);
+      color: var(--navy);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 26px;
-      font-weight: 800;
-      margin-bottom: 18px;
+      font-size: 28px;
+      font-weight: 900;
+      margin-bottom: 20px;
+      box-shadow: 0 0 50px rgba(244, 138, 33, 0.5);
     }
+    .form-success h3 { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .form-success p { color: var(--dim); max-width: 40ch; margin: 0 auto; }
 
-    .form-success h3 { font-size: 26px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 8px; }
-    .form-success p { color: var(--graphite); }
-
-    /* ============ feature cards ============ */
-    .grid-2 { display: grid; gap: 20px; grid-template-columns: repeat(2, 1fr); }
-
-    .feature-card {
-      border-radius: var(--radius-card);
-      padding: clamp(28px, 3.4vw, 44px);
-      background: var(--fog);
-      transition: transform 0.5s var(--ease-out);
-    }
-
-    .band-fog .feature-card { background: var(--snow); }
-    .feature-card:hover { transform: translateY(-4px); }
-
-    .feature-card h3 { font-size: 24px; font-weight: 700; letter-spacing: -0.015em; margin-bottom: 10px; }
-    .feature-card p { color: var(--graphite); }
-
-    .feature-card .glyph {
-      width: 46px;
-      height: 46px;
-      margin-bottom: 22px;
-      color: var(--flame);
-    }
-
-    .feature-card:nth-child(2) .glyph { color: var(--orange); }
-
-    .feature-card.dark {
-      grid-column: 1 / -1;
-      background: var(--navy);
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 30px;
-      align-items: center;
-    }
-
-    .feature-card.dark h3 { color: #fff; font-size: clamp(26px, 3vw, 36px); }
-    .feature-card.dark p { color: rgba(255, 255, 255, 0.72); }
-    .feature-card.dark .glyph { color: var(--gold); }
-
-    .dark-card-mark {
-      justify-self: center;
-      width: clamp(150px, 18vw, 220px);
-      height: auto;
-      opacity: 0.96;
-    }
-
-    /* ============ subjects carousel ============ */
-    .carousel-head {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 20px;
-      margin-bottom: 34px;
-    }
-
-    .car-btns { display: flex; gap: 10px; }
-
-    .car-btn {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      border: 0;
-      background: var(--silver);
-      color: var(--ink);
-      font-size: 17px;
-      cursor: pointer;
-      transition: background 0.2s var(--ease), opacity 0.2s var(--ease);
-    }
-
-    .car-btn:hover { background: #dcdce1; }
-    .car-btn:disabled { opacity: 0.35; cursor: default; }
-
-    .carousel {
-      display: flex;
-      gap: 18px;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding: 4px 4px 22px;
-      scrollbar-width: none;
-    }
-
-    .carousel::-webkit-scrollbar { display: none; }
-
-    .subject-card {
-      flex: 0 0 270px;
-      scroll-snap-align: start;
-      background: var(--snow);
-      border-radius: var(--radius-card);
-      padding: 30px 26px;
-      min-height: 230px;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.5s var(--ease-out);
-    }
-
-    .band-snow .subject-card { background: var(--fog); }
-
-    .subject-card:hover { transform: translateY(-4px); }
-
-    .subject-card .badge {
-      width: 42px;
-      height: 8px;
-      border-radius: 4px;
-      margin-bottom: 22px;
-    }
-
-    .subject-card:nth-child(3n + 1) .badge { background: var(--flame); }
-    .subject-card:nth-child(3n + 2) .badge { background: var(--orange); }
-    .subject-card:nth-child(3n + 3) .badge { background: var(--gold); }
-
-    .subject-card h3 { font-size: 21px; font-weight: 700; letter-spacing: -0.012em; margin-bottom: 8px; }
-    .subject-card p { color: var(--graphite); font-size: 15px; }
-
-    .car-dots {
-      display: flex;
-      justify-content: center;
-      gap: 7px;
-      margin-top: 6px;
-    }
-
-    .car-dots button {
-      width: 8px;
-      height: 8px;
-      border-radius: 999px;
-      border: 0;
-      padding: 0;
-      background: rgba(0, 0, 0, 0.18);
-      cursor: pointer;
-      transition: background 0.2s var(--ease), transform 0.2s var(--ease);
-    }
-
-    .car-dots button.on { background: var(--ink); transform: scale(1.25); }
-
-    /* ============ Band 6 theatrical stage ============ */
-    .scene-stage { height: 170vh; }
-
-    .scene-stage .scene-pin {
-      background: var(--stage);
-      color: #fff;
-      text-align: center;
-      padding: 0 24px;
-    }
-
-    .stage-copy { will-change: transform, opacity; max-width: 880px; }
-
-    .stage-copy .stage-big {
-      font-size: clamp(64px, 12vw, 150px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 0.98;
-      text-shadow: 0 4px 40px rgba(12, 19, 34, 0.35);
-    }
-
-    .stage-line {
-      margin-top: 22px;
-      font-size: clamp(19px, 2.6vw, 28px);
-      font-weight: 500;
-      letter-spacing: -0.012em;
-      color: rgba(255, 255, 255, 0.92);
-      will-change: transform, opacity;
-    }
-
-    .stage-foot {
-      margin-top: 34px;
-      will-change: transform, opacity;
-    }
-
-    /* ============ pinned how-it-works ============ */
-    .scene-how { height: 260vh; background: var(--snow); }
-    .scene-how .scene-pin { background: var(--snow); justify-content: center; }
-
-    .how-frame { width: min(calc(100% - 44px), var(--max-width)); }
-
-    .how-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: clamp(30px, 6vw, 80px);
-      align-items: center;
-      margin-top: clamp(28px, 4vh, 48px);
-    }
-
-    .how-steps { display: grid; gap: 6px; }
-
-    .how-step {
-      position: relative;
-      padding: 18px 20px 18px 34px;
-      border-radius: 18px;
-      cursor: pointer;
-      transition: background 0.3s var(--ease), opacity 0.3s var(--ease);
-      opacity: 0.38;
-    }
-
-    .how-step::before {
-      content: "";
-      position: absolute;
-      left: 14px;
-      top: 22px;
-      bottom: 22px;
-      width: 3px;
-      border-radius: 3px;
-      background: var(--silver);
-      transition: background 0.3s var(--ease);
-    }
-
-    .how-step.on { opacity: 1; background: var(--fog); }
-    .how-step:nth-child(1).on::before { background: var(--gold); }
-    .how-step:nth-child(2).on::before { background: var(--orange); }
-    .how-step:nth-child(3).on::before { background: var(--flame); }
-
-    .how-step h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.012em; margin-bottom: 4px; }
-    .how-step p { font-size: 15px; color: var(--graphite); }
-
-    .how-visual {
-      position: relative;
-      border-radius: var(--radius-card);
-      background: var(--fog);
-      min-height: clamp(300px, 44vh, 420px);
-      overflow: hidden;
-    }
-
-    .how-panel {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 36px;
-      opacity: 0;
-      transform: translateY(30px) scale(0.96);
-      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
-    }
-
-    .how-panel.on { opacity: 1; transform: none; }
-
-    .how-panel .big-num {
-      font-size: clamp(72px, 9vw, 120px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-
-    .how-panel:nth-child(1) .big-num { color: var(--gold); }
-    .how-panel:nth-child(2) .big-num { color: var(--orange); }
-    .how-panel:nth-child(3) .big-num { color: var(--flame); }
-
-    .how-panel h4 {
-      margin: 14px 0 8px;
-      font-size: 24px;
-      font-weight: 700;
-      letter-spacing: -0.015em;
-    }
-
-    .how-panel p { color: var(--graphite); max-width: 40ch; margin: 0; }
-
-    /* ============ FAQ ============ */
-    .faq-list { max-width: 760px; }
-
-    .faq-item { border-bottom: 1px solid var(--silver); }
-    .faq-item:first-child { border-top: 1px solid var(--silver); }
-
-    .faq-q {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      background: none;
-      border: 0;
-      padding: 22px 4px;
-      font: inherit;
-      font-size: 19px;
-      font-weight: 600;
-      letter-spacing: -0.012em;
-      color: var(--ink);
-      text-align: left;
-      cursor: pointer;
-    }
-
-    .faq-q .chev {
-      flex: none;
-      width: 14px;
-      height: 14px;
-      border-right: 2px solid var(--graphite);
-      border-bottom: 2px solid var(--graphite);
-      transform: rotate(45deg);
-      transition: transform 0.3s var(--ease);
-      margin-top: -4px;
-    }
-
-    .faq-q[aria-expanded="true"] .chev { transform: rotate(225deg); margin-top: 6px; }
-
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.5s var(--ease-out); }
-    .faq-a p { padding: 0 4px 24px; color: var(--graphite); max-width: 64ch; }
-
-    /* ============ final CTA ============ */
-    .final-cta {
-      background: var(--navy-deep);
-      color: #fff;
-      text-align: center;
-      padding: clamp(90px, 12vw, 150px) 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .final-cta .amark-watermark {
-      position: absolute;
-      width: 560px;
-      height: auto;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -42%);
-      opacity: 0.05;
-      pointer-events: none;
-    }
-
-    .final-cta .container { position: relative; }
-    .final-cta .h-lg { color: #fff; }
-    .final-cta .sub { color: rgba(255, 255, 255, 0.65); margin: 16px auto 34px; max-width: 46ch; }
-
-    .final-ctas {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 26px;
-      flex-wrap: wrap;
-    }
-
-    .final-cta .text-link { color: var(--gold); }
-
-    /* ============ footer ============ */
+    /* ---------- footer ---------- */
     .footer {
-      background: var(--fog);
-      padding: 34px 0 44px;
-      font-size: 13px;
-      color: var(--graphite);
+      position: relative;
+      z-index: 2;
+      padding: 40px clamp(20px, 5vw, 60px) 50px;
+      font-size: 13.5px;
+      color: var(--faint);
     }
 
     .footer-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 14px;
+      gap: 16px;
       flex-wrap: wrap;
-      border-top: 1px solid var(--silver);
-      padding-top: 26px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 28px;
     }
 
-    .footer a:hover { color: var(--link); }
+    .footer a:hover { color: var(--gold); }
 
-    /* ============ floating mobile enquire ============ */
-    .fab {
-      position: fixed;
-      left: 50%;
-      bottom: 18px;
-      transform: translate(-50%, 80px);
-      z-index: 85;
-      box-shadow: 0 10px 30px rgba(214, 42, 33, 0.4);
-      opacity: 0;
-      pointer-events: none;
-      transition: transform 0.35s var(--ease), opacity 0.35s var(--ease);
-    }
-
-    .fab.show {
-      transform: translate(-50%, 0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    @media (min-width: 761px) { .fab { display: none; } }
-
-    /* ============ reveals ============ */
+    /* ---------- reveals ---------- */
     .reveal {
       opacity: 0;
-      transform: translateY(34px);
-      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+      transform: translateY(40px);
+      transition: opacity 1s var(--ease-out), transform 1s var(--ease-out);
       transition-delay: var(--d, 0s);
     }
 
     .reveal.in { opacity: 1; transform: none; }
 
-    /* ============ reduced motion ============ */
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      .scene { height: auto !important; }
-      .scene-pin { position: static; height: auto; min-height: 0; padding: 70px 0; }
-      .sheet { margin-top: 0; border-radius: 0; box-shadow: none; }
-      .hero-hint { display: none; }
       .reveal { opacity: 1; transform: none; transition: none; }
-      .how-panel { position: static; opacity: 1; transform: none; }
-      .how-visual { display: grid; min-height: 0; }
-      .how-step { opacity: 1; }
-      .pill, .feature-card, .subject-card { transition: none; }
+      .scroll-cue .line { animation: none; }
+      .station { min-height: 0; padding: 14vh clamp(20px, 5vw, 60px); }
+      #launch { min-height: 0; }
+      .hero-stack { position: static; min-height: 88vh; }
     }
 
-    /* ============ responsive ============ */
-    @media (max-width: 1024px) {
-      .how-grid { grid-template-columns: 1fr; }
-      .how-visual { min-height: 280px; }
-      .feature-card.dark { grid-template-columns: 1fr; }
-      .dark-card-mark { width: 150px; }
+    /* ---------- responsive ---------- */
+    @media (max-width: 900px) {
+      .stat-row { grid-template-columns: 1fr; max-width: 480px; }
+      .summit-points { grid-template-columns: 1fr; max-width: 540px; }
+      .enquire-grid { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 760px) {
-      .nav-links {
-        position: fixed;
-        inset: var(--nav-h) 0 auto 0;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        background: rgba(245, 245, 247, 0.96);
-        backdrop-filter: blur(24px);
-        -webkit-backdrop-filter: blur(24px);
-        border-bottom: 1px solid var(--silver);
-        padding: 8px 24px 24px;
-        display: none;
-      }
-
-      .nav-links.open { display: flex; }
-
-      .nav-links a:not(.pill) {
-        padding: 16px 2px;
-        font-size: 17px;
-        border-bottom: 1px solid var(--silver);
-      }
-
-      .nav-links .pill { margin-top: 18px; justify-content: center; }
-      .nav-burger { display: block; }
-
-      .grid-2, .two-col { grid-template-columns: 1fr; }
-      .enquiry-card { grid-template-columns: 1fr; }
-      .scene-hero { height: 215vh; }
-      .subject-card { flex-basis: 230px; }
-      .carousel-head { flex-direction: column; align-items: flex-start; }
-      .car-btns { display: none; }
+    @media (max-width: 640px) {
+      .station { min-height: 130vh; }
+      #launch { min-height: 170vh; }
+      .two-col { grid-template-columns: 1fr; }
+      .mega { font-size: clamp(2.7rem, 13vw, 4.2rem); }
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav class="nav" aria-label="Main navigation">
-    <div class="container nav-inner">
-      <a href="#top" class="brand" aria-label="ATAR MAX Tutoring — back to top">
-        <span class="mark-tile"><img src="images/atar-max-mark.png" alt="" width="880" height="614" /></span>
-        <span>ATAR MAX<small>TUTORING</small></span>
-      </a>
-      <button class="nav-burger" id="navBurger" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-links" id="navLinks">
-        <a href="#services">Services</a>
-        <a href="#subjects">Subjects</a>
-        <a href="#band6">Why Us</a>
-        <a href="#how">How It Works</a>
-        <a href="#faq">FAQ</a>
-        <a href="#enquire" class="pill pill-flame pill-sm">Enquire</a>
-      </div>
+  <canvas id="world" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <nav class="nav" id="nav" aria-label="Main">
+    <a href="#launch" class="brand" aria-label="ATAR MAX Tutoring — back to top">
+      <img src="images/atar-max-mark.png" alt="" width="40" height="28" />
+      <span class="brand-text"><b>ATAR MAX</b><span>TUTORING</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#why">Why us</a>
+      <a href="#journey">How it works</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#faq">FAQ</a>
+      <a href="#enquire" class="pill pill-sm">Free consultation</a>
     </div>
   </nav>
 
-  <!-- ============ HERO — pinned scroll scene ============ -->
-  <section class="scene scene-hero" id="top" data-scene="hero">
-    <div class="scene-pin">
-      <div class="hero-copy" id="heroCopy">
-        <p class="hero-eyebrow">ATAR MAX Tutoring</p>
-        <h1 class="display">Maximise<br /><span class="accent">every mark.</span></h1>
-        <p class="sub hero-sub">Band 6 tutors. Every major subject. Years 7–12.<br />Tutoring that's built around the student.</p>
-        <div class="hero-ctas">
-          <a class="pill pill-flame" href="#enquire">Enquire now</a>
-          <a class="text-link" href="#services">Learn more</a>
+  <nav class="rail" aria-label="Journey">
+    <a href="#launch" data-rail><span>Launch</span></a>
+    <a href="#why" data-rail><span>Ignition</span></a>
+    <a href="#journey" data-rail><span>Lift-off</span></a>
+    <a href="#subjects" data-rail><span>Orbit</span></a>
+    <a href="#summit" data-rail><span>Summit</span></a>
+    <a href="#faq" data-rail><span>FAQ</span></a>
+    <a href="#enquire" data-rail><span>Enquire</span></a>
+  </nav>
+
+  <main id="main">
+
+    <!-- ① LAUNCHPAD -->
+    <section class="station" id="launch">
+      <div class="station-inner hero-stack">
+        <div>
+          <span class="kicker">Mission: your max</span>
+          <h1 class="mega text-shadow">Maximise <span class="flame">every mark.</span></h1>
+          <p class="sub text-shadow">Band 6 tutors. Every major subject. Years 7–12.<br />
+          Start with a <b style="color: var(--gold); font-weight: 650;">free consultation</b> — and give your child the launchpad they deserve.</p>
+          <div class="hero-ctas">
+            <a class="pill" href="#enquire">Start your free consultation</a>
+            <a class="pill pill-ghost" href="#why">Take the journey</a>
+          </div>
+          <span class="free-note"><b>Free &amp; no obligation.</b> Enquiring costs nothing — it's simply the first step.</span>
+          <div class="hero-chips">
+            <span class="chip"><i></i>Band 6 tutors only</span>
+            <span class="chip"><i></i>Years 7–12</span>
+            <span class="chip"><i></i>All major subjects</span>
+            <span class="chip"><i></i>Online &amp; small group</span>
+          </div>
+        </div>
+        <div class="scroll-cue" aria-hidden="true"><span class="line"></span>Scroll to launch</div>
+      </div>
+    </section>
+
+    <!-- ② IGNITION — why it works -->
+    <section class="station" id="why">
+      <div class="station-inner">
+        <span class="kicker reveal">Ignition · Why it works</span>
+        <h2 class="h2 text-shadow reveal" style="--d: 0.06s">Taught by people<br />who've <span class="flame" style="background: var(--flame-grad); -webkit-background-clip: text; background-clip: text; color: transparent;">already aced it.</span></h2>
+        <p class="sub text-shadow reveal" style="--d: 0.12s; margin-top: 24px;">Every ATAR MAX tutor achieved a Band 6 in the exact subject they teach. They've sat the exams, cracked the rubrics, and felt the pressure — so they teach what actually scores marks, not what fills time.</p>
+
+        <div class="stat-row">
+          <div class="stat glass reveal" style="--d: 0s">
+            <div class="big">Band 6</div>
+            <h3>Proof, not promises</h3>
+            <p>Every tutor earned a Band 6 in the subject they teach — proven performance your child learns from directly.</p>
+          </div>
+          <div class="stat glass reveal" style="--d: 0.1s">
+            <div class="big">1-on-1</div>
+            <h3>Built around your child</h3>
+            <p>Personalised lessons, or small online groups for students who thrive on collaboration. No rigid scripts, ever.</p>
+          </div>
+          <div class="stat glass reveal" style="--d: 0.2s">
+            <div class="big">$0</div>
+            <h3>Free consultation</h3>
+            <p>Your first consultation costs nothing. We listen, assess goals, and match the right tutor — before you commit to anything.</p>
+          </div>
         </div>
       </div>
-      <div class="hero-mark" id="heroMark">
-        <div class="mark-tile hero-tile">
-          <img src="images/atar-max-mark.png" alt="ATAR MAX logo mark" width="880" height="614" fetchpriority="high" />
+    </section>
+
+    <!-- ③ LIFT-OFF — how it works -->
+    <section class="station" id="journey">
+      <div class="station-inner">
+        <span class="kicker reveal">Lift-off · How it works</span>
+        <h2 class="h2 text-shadow reveal" style="--d: 0.06s">From enquiry to lift-off<br />in three steps.</h2>
+
+        <div class="steps">
+          <div class="step glass reveal" style="--d: 0s">
+            <span class="num">01</span>
+            <div>
+              <h3>Send an enquiry <span class="free-tag">Free</span></h3>
+              <p>Two minutes with the form below. Tell us the year level, subject, and what your child is aiming for. No cost, no obligation.</p>
+            </div>
+          </div>
+          <div class="step glass reveal" style="--d: 0.1s">
+            <span class="num">02</span>
+            <div>
+              <h3>Free consultation &amp; tutor match</h3>
+              <p>We reply by email to arrange your free consultation — then match your child with the Band 6 tutor who fits their subject, goals, and learning style.</p>
+            </div>
+          </div>
+          <div class="step glass reveal" style="--d: 0.2s">
+            <span class="num">03</span>
+            <div>
+              <h3>Lessons begin — momentum builds</h3>
+              <p>Clear teaching, real exam insight, and steady confidence. Your child's max stops being a hope and starts being a plan.</p>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="hero-hint" aria-hidden="true">Scroll ↓</div>
-    </div>
-  </section>
+    </section>
 
-  <main>
-    <!-- ============ ENQUIRY — front and centre, rises over the hero as a sheet ============ -->
-    <section class="band band-snow sheet" id="enquire">
-      <div class="container">
-        <div class="band-heading center reveal">
-          <span class="kicker">Get in touch</span>
-          <h2 class="h-lg">Start an enquiry.</h2>
-          <p class="sub">Tell us what the student needs — we'll match them with the right Band 6 tutor and reply by email.</p>
+    <!-- ④ ORBIT — subjects -->
+    <section class="station" id="subjects">
+      <div class="station-inner">
+        <span class="kicker reveal">Orbit · Subjects</span>
+        <h2 class="h2 text-shadow reveal" style="--d: 0.06s">A constellation<br />of subjects.</h2>
+        <p class="sub text-shadow reveal" style="--d: 0.12s; margin-top: 24px;">A team of tutors means broad coverage — your child is matched with a Band 6 tutor in their exact subject, not whoever happens to be available.</p>
+
+        <div class="subjects-wrap reveal" style="--d: 0.15s">
+          <span class="subject">English</span>
+          <span class="subject">Mathematics</span>
+          <span class="subject">Biology</span>
+          <span class="subject">Chemistry</span>
+          <span class="subject">Physics</span>
+          <span class="subject">History</span>
+          <span class="subject">Legal Studies</span>
+          <span class="subject">Business Studies</span>
+          <span class="subject">Economics</span>
+          <span class="subject more">+ more — just ask</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑤ SUMMIT — the promise -->
+    <section class="station" id="summit">
+      <div class="station-inner">
+        <span class="kicker reveal" style="justify-content: center;">Summit · The result</span>
+        <h2 class="mega text-shadow reveal" style="--d: 0.06s; font-size: clamp(2.6rem, 7vw, 6rem);">Your child's max,<br /><span class="flame">unlocked.</span></h2>
+        <p class="sub text-shadow reveal" style="--d: 0.12s">Results come from the right tutor, the right method, and real momentum. That's the whole mission — and it starts with one free conversation.</p>
+
+        <div class="summit-points">
+          <div class="glass reveal" style="--d: 0s">
+            <h3>No rigid scripts</h3>
+            <p>Tutoring centres force one method on every tutor. We do the opposite — our tutors teach the way that earned them a Band 6, adapted to how your child learns.</p>
+          </div>
+          <div class="glass reveal" style="--d: 0.1s">
+            <h3>Matched, not assigned</h3>
+            <p>Subject, goals, year level, personality — we weigh all of it before pairing your child with their tutor. The right fit is half the result.</p>
+          </div>
         </div>
 
-        <div class="enquiry-card reveal" style="--d: 0.08s">
-          <div class="enquiry-intro">
-            <span class="kicker">Enquire</span>
-            <h2 class="h-sm">Let's find the right tutor for your student.</h2>
-            <p class="sub" style="font-size: 16px">Subject tutoring, exam preparation, and small online group options.</p>
-            <ul class="check-list">
-              <li><span class="ck">✓</span> Years 7 to 12 support</li>
-              <li><span class="ck">✓</span> All major school subjects</li>
-              <li><span class="ck">✓</span> Band 6 tutors only</li>
-              <li><span class="ck">✓</span> Online and flexible lesson options</li>
+        <div class="reveal" style="--d: 0.18s; margin-top: 48px;">
+          <a class="pill" href="#enquire">Get your free consultation</a>
+          <span class="free-note">It's free, takes two minutes, and there's zero obligation.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑥ FAQ -->
+    <section class="station" id="faq">
+      <div class="station-inner">
+        <span class="kicker reveal">Mission briefing · FAQ</span>
+        <h2 class="h2 text-shadow reveal" style="--d: 0.06s">Questions, answered.</h2>
+
+        <div class="faq-list reveal" style="--d: 0.1s">
+          <details class="faq">
+            <summary>Does it cost anything to enquire?</summary>
+            <div class="a"><p>No — enquiring is completely free, and it includes a free consultation. We'll discuss your child's goals and recommend the right tutor and format before you commit to anything.</p></div>
+          </details>
+          <details class="faq">
+            <summary>What happens after I send an enquiry?</summary>
+            <div class="a"><p>We'll reply by email to arrange your free consultation. From there we match your child with a Band 6 tutor in their subject and organise the first lesson once you're happy to go ahead.</p></div>
+          </details>
+          <details class="faq">
+            <summary>What year levels do you support?</summary>
+            <div class="a"><p>Years 7 through 12 — including students preparing for senior assessments and final exams.</p></div>
+          </details>
+          <details class="faq">
+            <summary>Which subjects can you help with?</summary>
+            <div class="a"><p>All major school subjects — English, Mathematics, the Sciences, and Humanities subjects like History, Legal Studies, Business Studies, and Economics. Every student is matched with a tutor who achieved a Band 6 in that specific subject.</p></div>
+          </details>
+          <details class="faq">
+            <summary>Do you offer one-on-one or group lessons?</summary>
+            <div class="a"><p>Both. Personalised one-on-one tutoring, or small online group classes for students who enjoy a collaborative format. Not sure which suits best? That's exactly what the free consultation is for.</p></div>
+          </details>
+          <details class="faq">
+            <summary>How are students matched with a tutor?</summary>
+            <div class="a"><p>We review the student's year level, subject, and goals, then pair them with the tutor — or class option — that fits best. Every tutor teaches a subject they achieved a Band 6 in.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ⑦ ENQUIRE -->
+    <section class="station" id="enquire">
+      <div class="station-inner">
+        <div style="text-align: center; margin-bottom: 44px;">
+          <span class="kicker reveal" style="justify-content: center;">Final stage · Enquire</span>
+          <h2 class="mega text-shadow reveal" style="--d: 0.06s; font-size: clamp(2.6rem, 7vw, 5.6rem);">Begin the <span class="flame">countdown.</span></h2>
+          <p class="sub text-shadow reveal" style="--d: 0.12s; margin: 22px auto 0;">One free, no-obligation enquiry is all it takes to get your child matched with the right Band 6 tutor.</p>
+        </div>
+
+        <div class="enquire-grid reveal" style="--d: 0.1s">
+          <div class="enquire-intro glass">
+            <h2 class="h2">Let's find the right tutor for your child.</h2>
+            <p class="sub">Tell us what they need — we'll handle the rest.</p>
+            <ul class="promise-list">
+              <li><span class="ok">✓</span><span><b>Free consultation included</b> — we listen first, recommend second.</span></li>
+              <li><span class="ok">✓</span><span><b>Band 6 tutors only</b> — proven results in the subject they teach.</span></li>
+              <li><span class="ok">✓</span><span><b>Years 7–12, all major subjects</b> — one-on-one or small online groups.</span></li>
+              <li><span class="ok">✓</span><span><b>Zero obligation</b> — enquiring never commits you to anything.</span></li>
             </ul>
-            <p class="enquiry-email">Prefer email? <a href="mailto:atarmaxtutoring@gmail.com">atarmaxtutoring@gmail.com</a></p>
+            <p class="enquire-email">Prefer email? <a href="mailto:atarmaxtutoring@gmail.com">atarmaxtutoring@gmail.com</a></p>
           </div>
 
-          <div class="enquiry-form">
+          <div class="form-card glass">
             <form id="enquiryForm" action="https://formspree.io/f/xojyezbk" method="POST">
               <input type="hidden" name="_subject" value="New enquiry — ATAR MAX website" />
               <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -1055,507 +1005,533 @@
 
               <div class="form-status" id="formStatus" role="status"></div>
 
-              <button class="pill pill-flame" type="submit" id="formSubmit">Send enquiry</button>
-              <p class="form-foot">Sent securely via Formspree, straight to our inbox.</p>
+              <button class="pill" type="submit" id="formSubmit">Send enquiry — it's free</button>
+              <p class="form-foot"><b>Free consultation included.</b> Sent securely via Formspree, straight to our inbox.</p>
             </form>
 
             <div class="form-success" id="formSuccess">
               <div class="ok-ring" aria-hidden="true">✓</div>
-              <h3>Enquiry sent.</h3>
-              <p>Thanks for reaching out — we'll be in touch by email soon.</p>
+              <h3>Countdown started.</h3>
+              <p>Thanks for reaching out — we'll reply by email to arrange your free consultation.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SERVICES ============ -->
-    <section class="band band-fog" id="services">
-      <div class="container">
-        <div class="band-heading reveal">
-          <span class="kicker">Services</span>
-          <h2 class="h-lg">Built around the student.</h2>
-          <p class="sub">Some students want confidence. Some want structure. Some want top marks. We build lessons around what each student actually needs.</p>
-        </div>
-
-        <div class="grid-2">
-          <article class="feature-card reveal" style="--d: 0s">
-            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            <h3>One-on-one tutoring</h3>
-            <p>Personalised sessions for students who want direct support, detailed feedback, and consistent progress in a specific subject.</p>
-          </article>
-
-          <article class="feature-card reveal" style="--d: 0.1s">
-            <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <h3>Small online group classes</h3>
-            <p>Focused online classes in small groups — ideal for students who benefit from collaboration while still receiving clear, structured teaching.</p>
-          </article>
-
-          <article class="feature-card dark reveal" style="--d: 0.18s">
-            <div>
-              <svg class="glyph" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-              <h3>School &amp; exam preparation</h3>
-              <p>Assessment support, revision, exam strategy, and help building the study habits students need to perform with confidence — from first assessment to final exam.</p>
-            </div>
-            <img class="dark-card-mark" src="images/atar-max-mark.png" alt="" width="880" height="614" />
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ SUBJECTS — snap carousel ============ -->
-    <section class="band band-snow" id="subjects">
-      <div class="container">
-        <div class="carousel-head reveal">
-          <div class="band-heading" style="margin-bottom: 0">
-            <span class="kicker">Subjects</span>
-            <h2 class="h-lg">Every major subject.</h2>
-            <p class="sub">A team of tutors means broad coverage — not one tutor's specialities.</p>
-          </div>
-          <div class="car-btns">
-            <button class="car-btn" id="carPrev" aria-label="Previous subjects">‹</button>
-            <button class="car-btn" id="carNext" aria-label="Next subjects">›</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="carousel reveal" id="carousel" style="--d: 0.08s">
-          <article class="subject-card">
-            <span class="badge" aria-hidden="true"></span>
-            <h3>English</h3>
-            <p>Essay writing, textual analysis, creative writing, and exam responses.</p>
-          </article>
-          <article class="subject-card">
-            <span class="badge" aria-hidden="true"></span>
-            <h3>Mathematics</h3>
-            <p>Core skills, confidence building, and extension-level support.</p>
-          </article>
-          <article class="subject-card">
-            <span class="badge" aria-hidden="true"></span>
-            <h3>Biology</h3>
-            <p>Clear explanations and exam-ready understanding of every module.</p>
-          </article>
-          <article class="subject-card">
-            <span class="badge" aria-hidden="true"></span>
-            <h3>Chemistry</h3>
-            <p>From core concepts to confident problem-solving under exam conditions.</p>
-          </article>
-          <article class="subject-card">
-            <span class="badge" aria-hidden="true"></span>
-            <h3>Physics</h3>
-            <p>Building intuition, working scientifically, and mastering calculations.</p>
-          </article>
-          <article class="subject-card">
-            <span class="badge" aria-hidden="true"></span>
-            <h3>History</h3>
-            <p>Source analysis, structured arguments, and strong written responses.</p>
-          </article>
-          <article class="subject-card">
-            <span class="badge" aria-hidden="true"></span>
-            <h3>Legal Studies</h3>
-            <p>Legislation, cases, and essay technique that hits the criteria.</p>
-          </article>
-          <article class="subject-card">
-            <span class="badge" aria-hidden="true"></span>
-            <h3>Business Studies</h3>
-            <p>Reports, case studies, and the business terminology markers look for.</p>
-          </article>
-          <article class="subject-card">
-            <span class="badge" aria-hidden="true"></span>
-            <h3>Economics</h3>
-            <p>Theory, current examples, and clear extended-response writing.</p>
-          </article>
-        </div>
-        <div class="car-dots" id="carDots" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <!-- ============ BAND 6 — theatrical gradient stage ============ -->
-    <section class="scene scene-stage" id="band6" data-scene="stage">
-      <div class="scene-pin">
-        <div class="stage-copy" id="stageCopy">
-          <h2 class="stage-big">Band 6.<br />Every tutor.</h2>
-        </div>
-        <p class="stage-line" id="stageLine">Every tutor teaches a subject they achieved a Band 6 in — proven performance, stronger explanations, and real insight into assessments.</p>
-        <div class="stage-foot" id="stageFoot">
-          <a class="pill pill-dark" href="#enquire">Enquire now</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ NO SCRIPT ============ -->
-    <section class="band band-fog">
-      <div class="container">
-        <div class="grid-2" style="align-items: center; gap: clamp(30px, 6vw, 70px)">
-          <div class="reveal">
-            <span class="kicker">Our approach</span>
-            <h2 class="h-md">No rigid scripts.<br />Just great teaching.</h2>
-            <p class="sub" style="margin-top: 14px">Many tutoring centres force tutors to follow one strict method. We do the opposite — our tutors teach in the style that gets their best results, so lessons feel natural, engaging, and suited to how each student learns.</p>
-          </div>
-          <div class="grid-2 reveal" style="--d: 0.1s; gap: 14px">
-            <div class="feature-card" style="padding: 26px">
-              <h3 style="font-size: 18px">Proven in the subject</h3>
-              <p style="font-size: 14px">Tutors only teach subjects they excelled in themselves.</p>
-            </div>
-            <div class="feature-card" style="padding: 26px">
-              <h3 style="font-size: 18px">Their own style</h3>
-              <p style="font-size: 14px">Freedom to teach the way that gets their best results.</p>
-            </div>
-            <div class="feature-card" style="padding: 26px">
-              <h3 style="font-size: 18px">Matched, not assigned</h3>
-              <p style="font-size: 14px">Each student is paired with the tutor who fits their needs.</p>
-            </div>
-            <div class="feature-card" style="padding: 26px">
-              <h3 style="font-size: 18px">Flexible formats</h3>
-              <p style="font-size: 14px">One-on-one or small online groups — whatever works best.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ HOW IT WORKS — pinned step sequence ============ -->
-    <section class="scene scene-how" id="how" data-scene="how">
-      <div class="scene-pin">
-        <div class="how-frame">
-          <div class="band-heading" style="margin-bottom: 0">
-            <span class="kicker">How it works</span>
-            <h2 class="h-lg">Enquiry to first lesson.</h2>
-          </div>
-          <div class="how-grid">
-            <div class="how-steps" id="howSteps">
-              <div class="how-step on" data-step="0">
-                <h3>Submit an enquiry</h3>
-                <p>Year group, subject, goals — and whether you'd prefer one-on-one or a small online class.</p>
-              </div>
-              <div class="how-step" data-step="1">
-                <h3>We match the student</h3>
-                <p>We pair the student with the Band 6 tutor or class option that best fits their needs.</p>
-              </div>
-              <div class="how-step" data-step="2">
-                <h3>Lessons begin</h3>
-                <p>We organise the first session and start building momentum with clear, practical teaching.</p>
-              </div>
-            </div>
-            <div class="how-visual" id="howVisual">
-              <div class="how-panel on">
-                <div class="big-num">01</div>
-                <h4>Submit an enquiry</h4>
-                <p>Two minutes with the form above is all it takes to get started.</p>
-              </div>
-              <div class="how-panel">
-                <div class="big-num">02</div>
-                <h4>We match the student</h4>
-                <p>Reviewed personally — subject, year level, goals, and learning style all considered.</p>
-              </div>
-              <div class="how-panel">
-                <div class="big-num">03</div>
-                <h4>Lessons begin</h4>
-                <p>Details confirmed, first session organised, momentum underway.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FAQ ============ -->
-    <section class="band band-fog" id="faq">
-      <div class="container">
-        <div class="band-heading reveal">
-          <span class="kicker">FAQ</span>
-          <h2 class="h-lg">Questions, answered.</h2>
-        </div>
-
-        <div class="faq-list reveal" style="--d: 0.08s">
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">What year levels do you support?<span class="chev" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>We support students from Year 7 through to Year 12, including students preparing for senior assessments and final exams.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Which subjects can you help with?<span class="chev" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>All major school subjects — English, Mathematics, the Sciences, and Humanities subjects like History, Legal Studies, Business Studies, and Economics. We match each student with a tutor who achieved a Band 6 in that specific subject.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">Do you offer one-on-one or group lessons?<span class="chev" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Both. We offer personalised one-on-one tutoring as well as small online group classes for students who enjoy a more collaborative format. Not sure which suits best? Tell us in the enquiry form and we'll help you decide.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">How are students matched with a tutor?<span class="chev" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>We review the student's year level, subject, and goals, then pair them with the tutor — or class option — that best fits their needs. Every tutor teaches a subject they achieved a Band 6 in.</p></div>
-          </div>
-          <div class="faq-item">
-            <button class="faq-q" aria-expanded="false">How do we get started?<span class="chev" aria-hidden="true"></span></button>
-            <div class="faq-a"><p>Submit the enquiry form with the student's details and what support you're looking for. We'll get back to you by email to confirm the match and organise the first session.</p></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ FINAL CTA ============ -->
-    <section class="final-cta">
-      <img class="amark-watermark" src="images/atar-max-mark.png" alt="" width="880" height="614" />
-      <div class="container reveal">
-        <h2 class="h-lg">Ready to maximise?</h2>
-        <p class="sub">One enquiry is all it takes to get matched with the right Band 6 tutor.</p>
-        <div class="final-ctas">
-          <a class="pill pill-light" href="#enquire">Enquire now</a>
-          <a class="text-link" href="mailto:atarmaxtutoring@gmail.com">Email us instead</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer-inner">
-      <div style="display: flex; align-items: center; gap: 10px">
-        <span class="mark-tile" style="width: 28px; border-radius: 7px"><img src="images/atar-max-mark.png" alt="" width="880" height="614" /></span>
+    <div class="footer-inner">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="images/atar-max-mark.png" alt="" width="26" height="18" />
         <span>© <span id="year">2026</span> ATAR MAX Tutoring</span>
       </div>
       <a href="mailto:atarmaxtutoring@gmail.com">atarmaxtutoring@gmail.com</a>
     </div>
   </footer>
 
-  <a class="fab pill pill-flame" id="fab" href="#enquire">Enquire now</a>
+  <script type="module">
+    /* ====================================================================
+       ATAR MAX — living world (three.js) + interactions
+       ==================================================================== */
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const clamp01 = (v) => Math.min(1, Math.max(0, v));
+    const lerp = (a, b, t) => a + (b - a) * t;
+    const smooth = (t) => t * t * (3 - 2 * t);
 
-  <script>
-    (function () {
-      "use strict";
+    /* ---------- DOM interactions (independent of WebGL) ---------- */
+    const nav = document.getElementById("nav");
+    addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 30), { passive: true });
 
-      var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      var clamp01 = function (v) { return Math.min(1, Math.max(0, v)); };
+    const reveals = document.querySelectorAll(".reveal");
+    if (reduceMotion || !("IntersectionObserver" in window)) {
+      reveals.forEach((el) => el.classList.add("in"));
+    } else {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+      reveals.forEach((el) => io.observe(el));
+    }
 
-      /* ---------- mobile menu ---------- */
-      var burger = document.getElementById("navBurger");
-      var links = document.getElementById("navLinks");
-      burger.addEventListener("click", function () {
-        var open = links.classList.toggle("open");
-        burger.setAttribute("aria-expanded", open ? "true" : "false");
-      });
-      links.addEventListener("click", function (e) {
-        if (e.target.closest("a")) {
-          links.classList.remove("open");
-          burger.setAttribute("aria-expanded", "false");
-        }
-      });
-
-      /* ---------- scroll-driven scenes (Apple-style pin & scrub) ---------- */
-      var heroScene = document.querySelector('[data-scene="hero"]');
-      var heroCopy = document.getElementById("heroCopy");
-      var heroMark = document.getElementById("heroMark");
-      var heroHint = document.querySelector(".hero-hint");
-      var stageScene = document.querySelector('[data-scene="stage"]');
-      var stageCopy = document.getElementById("stageCopy");
-      var stageLine = document.getElementById("stageLine");
-      var stageFoot = document.getElementById("stageFoot");
-      var howScene = document.querySelector('[data-scene="how"]');
-      var howSteps = Array.prototype.slice.call(document.querySelectorAll(".how-step"));
-      var howPanels = Array.prototype.slice.call(document.querySelectorAll(".how-panel"));
-
-      function progress(el) {
-        var r = el.getBoundingClientRect();
-        var total = r.height - window.innerHeight;
-        if (total <= 0) return 0;
-        return clamp01(-r.top / total);
-      }
-
-      function setHowStep(idx) {
-        howSteps.forEach(function (s, i) { s.classList.toggle("on", i === idx); });
-        howPanels.forEach(function (p, i) { p.classList.toggle("on", i === idx); });
-      }
-
-      /* eased, lerp-smoothed scrubbing: scroll position sets targets, a persistent
-         rAF loop glides current values toward them so motion feels fluid */
-      var easeOut = function (t) { return 1 - Math.pow(1 - t, 3); };
-      var seg = function (p, a, b) { return clamp01((p - a) / (b - a)); };
-      var lerpK = 0.16;
-      var sc = { hero: { c: 0 }, stage: { c: 0 }, how: { c: 0 } };
-
-      function applyHero(p) {
-        var f = easeOut(seg(p, 0, 0.3));
-        heroCopy.style.opacity = (1 - f).toFixed(3);
-        heroCopy.style.transform = "translateY(" + (-56 * f).toFixed(1) + "px) scale(" + (1 - 0.05 * f).toFixed(3) + ")";
-        heroHint.style.opacity = (0.8 * (1 - seg(p, 0, 0.1))).toFixed(3);
-
-        /* mark glides to centre stage, keeps slowly growing as the sheet rises over it */
-        var z = easeOut(seg(p, 0, 0.55));
-        var tail = seg(p, 0.55, 1);
-        var scale = 1 + 0.5 * z + 0.12 * tail;
-        var lift = -(20 * z + 4 * tail);
-        var fade = 1 - 0.97 * seg(p, 0.34, 0.6);
-        heroMark.style.transform = "translateY(" + lift.toFixed(2) + "vh) scale(" + scale.toFixed(3) + ")";
-        heroMark.style.opacity = fade.toFixed(3);
-      }
-
-      function applyStage(p) {
-        var t = easeOut(seg(p, 0, 0.45));
-        var exit = Math.pow(seg(p, 0.82, 1), 2) * -48; /* gentle drift up so the un-pin never dead-stops */
-        stageCopy.style.transform = "translateY(" + exit.toFixed(1) + "px) scale(" + (0.86 + 0.14 * t).toFixed(3) + ")";
-        stageCopy.style.opacity = (0.2 + 0.8 * t).toFixed(3);
-        var l = easeOut(seg(p, 0.3, 0.58));
-        stageLine.style.opacity = l.toFixed(3);
-        stageLine.style.transform = "translateY(" + (26 * (1 - l) + exit).toFixed(1) + "px)";
-        var f2 = easeOut(seg(p, 0.48, 0.72));
-        stageFoot.style.opacity = f2.toFixed(3);
-        stageFoot.style.transform = "translateY(" + (22 * (1 - f2) + exit).toFixed(1) + "px)";
-      }
-
-      function frame() {
-        var targets = { hero: progress(heroScene), stage: progress(stageScene), how: progress(howScene) };
-        for (var k in sc) {
-          var d = targets[k] - sc[k].c;
-          sc[k].c = Math.abs(d) < 0.0004 ? targets[k] : sc[k].c + d * lerpK;
-        }
-        applyHero(sc.hero.c);
-        applyStage(sc.stage.c);
-        setHowStep(sc.how.c < 0.34 ? 0 : sc.how.c < 0.67 ? 1 : 2);
-        requestAnimationFrame(frame);
-      }
-
-      if (!reduceMotion) {
-        requestAnimationFrame(frame);
-      } else {
-        setHowStep(0);
-        howPanels.forEach(function (p) { p.classList.add("on"); });
-      }
-
-      /* clicking a step jumps the pinned scene to it */
-      howSteps.forEach(function (s, i) {
-        s.addEventListener("click", function () {
-          if (reduceMotion) { setHowStep(i); return; }
-          var top = howScene.offsetTop;
-          var total = howScene.offsetHeight - window.innerHeight;
-          window.scrollTo({ top: top + total * (i === 0 ? 0.05 : i === 1 ? 0.45 : 0.85), behavior: "smooth" });
+    /* journey rail */
+    const railLinks = document.querySelectorAll("[data-rail]");
+    const stations = [...document.querySelectorAll(".station")];
+    if ("IntersectionObserver" in window) {
+      const spy = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const idx = stations.indexOf(e.target);
+            railLinks.forEach((l, i) => l.classList.toggle("on", i === idx));
+          }
         });
-      });
+      }, { rootMargin: "-45% 0px -45% 0px" });
+      stations.forEach((s) => spy.observe(s));
+    }
 
-      /* ---------- reveals ---------- */
-      var revealEls = document.querySelectorAll(".reveal");
-      if (reduceMotion || !("IntersectionObserver" in window)) {
-        revealEls.forEach(function (el) { el.classList.add("in"); });
-      } else {
-        var io = new IntersectionObserver(function (entries) {
-          entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("in");
-              io.unobserve(entry.target);
-            }
-          });
-        }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
-        revealEls.forEach(function (el) { io.observe(el); });
-      }
+    /* enquiry form — AJAX to Formspree with inline confirmation */
+    const form = document.getElementById("enquiryForm");
+    const status = document.getElementById("formStatus");
+    const success = document.getElementById("formSuccess");
+    const submitBtn = document.getElementById("formSubmit");
 
-      /* ---------- subjects carousel ---------- */
-      var car = document.getElementById("carousel");
-      var dotsWrap = document.getElementById("carDots");
-      var prev = document.getElementById("carPrev");
-      var next = document.getElementById("carNext");
-      var cards = car.children;
+    form.addEventListener("submit", (e) => {
+      if (!window.fetch || !window.FormData) return;
+      e.preventDefault();
+      status.className = "form-status";
+      status.textContent = "";
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
 
-      var dotCount = Math.min(cards.length, 9);
-      for (var d = 0; d < dotCount; d++) {
-        var b = document.createElement("button");
-        b.type = "button";
-        (function (idx) {
-          b.addEventListener("click", function () {
-            cards[idx].scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", inline: "start", block: "nearest" });
-          });
-        })(d);
-        dotsWrap.appendChild(b);
-      }
-      var dots = dotsWrap.children;
-
-      function syncCarousel() {
-        var max = car.scrollWidth - car.clientWidth;
-        var idx = Math.round((car.scrollLeft / Math.max(1, max)) * (dotCount - 1));
-        for (var i = 0; i < dots.length; i++) dots[i].classList.toggle("on", i === idx);
-        prev.disabled = car.scrollLeft < 10;
-        next.disabled = car.scrollLeft > max - 10;
-      }
-
-      car.addEventListener("scroll", function () { requestAnimationFrame(syncCarousel); }, { passive: true });
-      syncCarousel();
-
-      function page(dir) {
-        car.scrollBy({ left: dir * (car.clientWidth * 0.85), behavior: reduceMotion ? "auto" : "smooth" });
-      }
-      prev.addEventListener("click", function () { page(-1); });
-      next.addEventListener("click", function () { page(1); });
-
-      /* ---------- FAQ accordion ---------- */
-      document.querySelectorAll(".faq-q").forEach(function (btn) {
-        btn.addEventListener("click", function () {
-          var expanded = btn.getAttribute("aria-expanded") === "true";
-          var answer = btn.nextElementSibling;
-          document.querySelectorAll(".faq-q").forEach(function (other) {
-            if (other !== btn) {
-              other.setAttribute("aria-expanded", "false");
-              other.nextElementSibling.style.maxHeight = null;
-            }
-          });
-          btn.setAttribute("aria-expanded", expanded ? "false" : "true");
-          answer.style.maxHeight = expanded ? null : answer.scrollHeight + "px";
-        });
-      });
-
-      /* ---------- floating Enquire pill (mobile) ---------- */
-      var fab = document.getElementById("fab");
-      var enquireSection = document.getElementById("enquire");
-      var enquireVisible = false;
-      if ("IntersectionObserver" in window) {
-        new IntersectionObserver(function (entries) {
-          enquireVisible = entries[0].isIntersecting;
-        }, { threshold: 0.05 }).observe(enquireSection);
-      }
-      window.addEventListener("scroll", function () {
-        var past = (window.scrollY || 0) > window.innerHeight * 1.4;
-        fab.classList.toggle("show", past && !enquireVisible);
-      }, { passive: true });
-
-      /* ---------- enquiry form: AJAX to Formspree, inline confirmation ---------- */
-      var form = document.getElementById("enquiryForm");
-      var status = document.getElementById("formStatus");
-      var success = document.getElementById("formSuccess");
-      var submitBtn = document.getElementById("formSubmit");
-
-      form.addEventListener("submit", function (e) {
-        if (!window.fetch || !window.FormData) return; /* old browser: normal submit */
-        e.preventDefault();
-        status.className = "form-status";
-        status.textContent = "";
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Sending…";
-
-        fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" }
-        }).then(function (res) {
+      fetch(form.action, { method: "POST", body: new FormData(form), headers: { Accept: "application/json" } })
+        .then((res) => {
           if (res.ok) {
             form.style.display = "none";
             success.style.display = "block";
             success.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
           } else {
-            return res.json().then(function (data) {
-              var msg = data && data.errors && data.errors.length
-                ? data.errors.map(function (er) { return er.message; }).join(" ")
+            return res.json().then((data) => {
+              const msg = data && data.errors && data.errors.length
+                ? data.errors.map((er) => er.message).join(" ")
                 : "Something went wrong sending your enquiry. Please try again, or email us directly.";
               throw new Error(msg);
             });
           }
-        }).catch(function (err) {
+        })
+        .catch((err) => {
           status.className = "form-status err";
           status.textContent = err.message || "Something went wrong. Please try again, or email atarmaxtutoring@gmail.com.";
-        }).finally(function () {
+        })
+        .finally(() => {
           submitBtn.disabled = false;
-          submitBtn.textContent = "Send enquiry";
+          submitBtn.textContent = "Send enquiry — it's free";
         });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* ---------- the living world ---------- */
+    if (!reduceMotion) {
+      initWorld().catch(() => document.documentElement.classList.add("no-webgl"));
+    } else {
+      document.documentElement.classList.add("no-webgl");
+    }
+
+    async function initWorld() {
+      const THREE = await import("https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js");
+      const canvas = document.getElementById("world");
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+      const isMobile = innerWidth < 760;
+      renderer.setPixelRatio(Math.min(devicePixelRatio, isMobile ? 1.5 : 2));
+      renderer.setSize(innerWidth, innerHeight);
+
+      const scene = new THREE.Scene();
+      scene.fog = new THREE.Fog(0x0a0f1c, 60, 240);
+
+      const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, 0.1, 600);
+
+      /* ----- lights ----- */
+      scene.add(new THREE.HemisphereLight(0x9db2dd, 0x16203a, 0.85));
+      const sunLight = new THREE.DirectionalLight(0xffd9a0, 0.9);
+      sunLight.position.set(14, 26, 12);
+      scene.add(sunLight);
+      const engineLight = new THREE.PointLight(0xff7a26, 0, 38, 1.8);
+      scene.add(engineLight);
+
+      /* ----- sky dome with scroll-driven dawn ----- */
+      const skyUniforms = {
+        uTop: { value: new THREE.Color(0x05080f) },
+        uMid: { value: new THREE.Color(0x131c2e) },
+        uDawnA: { value: new THREE.Color(0xf48a21) },
+        uDawnB: { value: new THREE.Color(0xf1372d) },
+        uDawn: { value: 0.15 }
+      };
+      const sky = new THREE.Mesh(
+        new THREE.SphereGeometry(420, 32, 24),
+        new THREE.ShaderMaterial({
+          side: THREE.BackSide,
+          depthWrite: false,
+          uniforms: skyUniforms,
+          vertexShader: `
+            varying vec3 vPos;
+            void main() { vPos = position; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }`,
+          fragmentShader: `
+            uniform vec3 uTop; uniform vec3 uMid; uniform vec3 uDawnA; uniform vec3 uDawnB; uniform float uDawn;
+            varying vec3 vPos;
+            void main() {
+              float h = normalize(vPos).y;
+              vec3 col = mix(uMid, uTop, smoothstep(0.0, 0.55, h));
+              float band = exp(-pow(max(h + 0.02, 0.0) * 6.0, 2.0));
+              vec3 dawn = mix(uDawnB, uDawnA, smoothstep(-0.08, 0.18, h));
+              col += dawn * band * uDawn;
+              gl_FragColor = vec4(col, 1.0);
+            }`
+        })
+      );
+      scene.add(sky);
+
+      /* ----- procedural sprite textures ----- */
+      function glowTexture(stops) {
+        const c = document.createElement("canvas");
+        c.width = c.height = 128;
+        const ctx = c.getContext("2d");
+        const g = ctx.createRadialGradient(64, 64, 0, 64, 64, 64);
+        stops.forEach(([o, col]) => g.addColorStop(o, col));
+        ctx.fillStyle = g;
+        ctx.fillRect(0, 0, 128, 128);
+        const t = new THREE.CanvasTexture(c);
+        return t;
+      }
+      const softDot = glowTexture([[0, "rgba(255,255,255,1)"], [0.4, "rgba(255,255,255,0.5)"], [1, "rgba(255,255,255,0)"]]);
+      const flameDot = glowTexture([[0, "rgba(255,236,170,1)"], [0.35, "rgba(244,138,33,0.85)"], [0.7, "rgba(241,55,45,0.4)"], [1, "rgba(241,55,45,0)"]]);
+
+      /* ----- stars (two parallax shells) ----- */
+      function starField(count, rMin, rMax, size, opacity) {
+        const pos = new Float32Array(count * 3);
+        for (let i = 0; i < count; i++) {
+          const r = rMin + Math.random() * (rMax - rMin);
+          const th = Math.random() * Math.PI * 2;
+          const ph = Math.acos(2 * Math.random() - 1);
+          pos[i * 3] = r * Math.sin(ph) * Math.cos(th);
+          pos[i * 3 + 1] = Math.abs(r * Math.cos(ph)) * 0.9 - 8;
+          pos[i * 3 + 2] = r * Math.sin(ph) * Math.sin(th);
+        }
+        const geo = new THREE.BufferGeometry();
+        geo.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+        const mat = new THREE.PointsMaterial({
+          size, map: softDot, transparent: true, opacity,
+          depthWrite: false, blending: THREE.AdditiveBlending, color: 0xfff4dd
+        });
+        return new THREE.Points(geo, mat);
+      }
+      const starsFar = starField(isMobile ? 700 : 1400, 180, 380, 1.6, 0.8);
+      const starsNear = starField(isMobile ? 250 : 500, 90, 170, 2.6, 0.55);
+      scene.add(starsFar, starsNear);
+
+      /* ----- nebula glows ----- */
+      const nebulaTints = [0xf5bf27, 0xf48a21, 0xf1372d, 0x3a5a9f, 0xf48a21, 0x2c4a8a];
+      const nebulas = [];
+      nebulaTints.forEach((tint, i) => {
+        const s = new THREE.Sprite(new THREE.SpriteMaterial({
+          map: softDot, color: tint, transparent: true, opacity: 0.1,
+          depthWrite: false, blending: THREE.AdditiveBlending
+        }));
+        const a = (i / nebulaTints.length) * Math.PI * 2;
+        s.position.set(Math.cos(a) * 150, 24 + Math.sin(i * 2.3) * 50, Math.sin(a) * 150 - 60);
+        s.scale.setScalar(90 + (i % 3) * 50);
+        scene.add(s);
+        nebulas.push(s);
       });
 
-      /* ---------- footer year ---------- */
-      document.getElementById("year").textContent = new Date().getFullYear();
-    })();
+      /* ----- sunrise glow ----- */
+      const sunGlow = new THREE.Sprite(new THREE.SpriteMaterial({
+        map: flameDot, color: 0xffc24d, transparent: true, opacity: 0,
+        depthWrite: false, blending: THREE.AdditiveBlending
+      }));
+      sunGlow.position.set(0, 22, -160);
+      sunGlow.scale.setScalar(120);
+      scene.add(sunGlow);
+
+      /* ----- terrain: low-poly digital landscape ----- */
+      function noise2(x, z) {
+        return Math.sin(x * 0.21) * Math.cos(z * 0.17) * 2.4
+             + Math.sin(x * 0.07 + 1.7) * Math.cos(z * 0.052 + 0.6) * 4.6
+             + Math.sin(x * 0.53 + 4.2) * Math.cos(z * 0.41 + 2.1) * 0.7;
+      }
+      const terrainGeo = new THREE.PlaneGeometry(420, 240, isMobile ? 70 : 130, isMobile ? 40 : 72);
+      terrainGeo.rotateX(-Math.PI / 2);
+      {
+        const p = terrainGeo.attributes.position;
+        const colors = new Float32Array(p.count * 3);
+        const cLow = new THREE.Color(0x0a0f1c);
+        const cHigh = new THREE.Color(0x22314f);
+        for (let i = 0; i < p.count; i++) {
+          const x = p.getX(i), z = p.getZ(i);
+          const flat = smooth(clamp01((Math.hypot(x, z) - 9) / 14)); /* flat launch pad area */
+          let y = Math.max(0, noise2(x, z)) * flat;
+          y *= 1 + smooth(clamp01((Math.abs(x) - 40) / 90)) * 1.6;   /* taller toward edges */
+          p.setY(i, y);
+          const t = clamp01(y / 9);
+          const col = cLow.clone().lerp(cHigh, t);
+          colors[i * 3] = col.r; colors[i * 3 + 1] = col.g; colors[i * 3 + 2] = col.b;
+        }
+        terrainGeo.setAttribute("color", new THREE.BufferAttribute(colors, 3));
+        terrainGeo.computeVertexNormals();
+      }
+      const terrain = new THREE.Mesh(terrainGeo, new THREE.MeshBasicMaterial({ vertexColors: true }));
+      scene.add(terrain);
+      const wire = new THREE.Mesh(terrainGeo, new THREE.MeshBasicMaterial({
+        wireframe: true, color: 0xf48a21, transparent: true, opacity: 0.05,
+        blending: THREE.AdditiveBlending, depthWrite: false
+      }));
+      wire.position.y = 0.06;
+      scene.add(wire);
+
+      /* ----- launch pad ----- */
+      const pad = new THREE.Group();
+      const padBase = new THREE.Mesh(
+        new THREE.CylinderGeometry(4.2, 4.8, 0.5, 28),
+        new THREE.MeshStandardMaterial({ color: 0x1b2740, roughness: 0.8 })
+      );
+      padBase.position.y = 0.25;
+      pad.add(padBase);
+      const ring = new THREE.Mesh(
+        new THREE.TorusGeometry(4.2, 0.06, 8, 40),
+        new THREE.MeshBasicMaterial({ color: 0xf5bf27, transparent: true, opacity: 0.5 })
+      );
+      ring.rotation.x = Math.PI / 2;
+      ring.position.y = 0.52;
+      pad.add(ring);
+      const tower = new THREE.Mesh(
+        new THREE.BoxGeometry(0.55, 9, 0.55),
+        new THREE.MeshStandardMaterial({ color: 0x16203a, roughness: 0.9 })
+      );
+      tower.position.set(3.1, 4.5, -2.2);
+      pad.add(tower);
+      scene.add(pad);
+
+      /* ----- rocket (brand-striped) ----- */
+      const rocket = new THREE.Group();
+      const bodyMat = new THREE.MeshStandardMaterial({ color: 0xf2f3f5, roughness: 0.35, metalness: 0.1 });
+      const navyMat = new THREE.MeshStandardMaterial({ color: 0x131c2e, roughness: 0.5 });
+      const body = new THREE.Mesh(new THREE.CylinderGeometry(0.62, 0.74, 4.6, 24), bodyMat);
+      body.position.y = 3.1;
+      rocket.add(body);
+      const nose = new THREE.Mesh(new THREE.ConeGeometry(0.62, 1.7, 24), bodyMat);
+      nose.position.y = 6.25;
+      rocket.add(nose);
+      /* brand stripe bands */
+      [[0xf5bf27, 1.95], [0xf48a21, 1.62], [0xf1372d, 1.29]].forEach(([col, y]) => {
+        const band = new THREE.Mesh(
+          new THREE.CylinderGeometry(0.755, 0.768, 0.3, 24),
+          new THREE.MeshStandardMaterial({ color: col, roughness: 0.4 })
+        );
+        band.position.y = y;
+        rocket.add(band);
+      });
+      const nozzle = new THREE.Mesh(new THREE.CylinderGeometry(0.4, 0.56, 0.55, 20), navyMat);
+      nozzle.position.y = 0.62;
+      rocket.add(nozzle);
+      for (let i = 0; i < 3; i++) {
+        const fin = new THREE.Mesh(new THREE.BoxGeometry(0.07, 1.25, 0.72), navyMat);
+        const a = (i / 3) * Math.PI * 2;
+        fin.position.set(Math.cos(a) * 0.78, 1.15, Math.sin(a) * 0.78);
+        fin.rotation.y = -a;
+        rocket.add(fin);
+      }
+      /* engine flame: additive cone, flickers with launch power */
+      const flame = new THREE.Mesh(
+        new THREE.ConeGeometry(0.42, 2.6, 18, 1, true),
+        new THREE.MeshBasicMaterial({ map: flameDot, color: 0xffc24d, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false })
+      );
+      flame.rotation.x = Math.PI;
+      flame.position.y = -1.0;
+      rocket.add(flame);
+      const flameGlow = new THREE.Sprite(new THREE.SpriteMaterial({ map: flameDot, color: 0xff8c2e, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending }));
+      flameGlow.position.y = -0.4;
+      flameGlow.scale.setScalar(3.4);
+      rocket.add(flameGlow);
+      scene.add(rocket);
+
+      /* ----- exhaust particles ----- */
+      const PN = isMobile ? 160 : 320;
+      const pPos = new Float32Array(PN * 3);
+      const pVel = new Float32Array(PN * 3);
+      const pLife = new Float32Array(PN);
+      const pCol = new Float32Array(PN * 3);
+      for (let i = 0; i < PN; i++) pLife[i] = Math.random();
+      const pGeo = new THREE.BufferGeometry();
+      pGeo.setAttribute("position", new THREE.BufferAttribute(pPos, 3));
+      pGeo.setAttribute("color", new THREE.BufferAttribute(pCol, 3));
+      const exhaust = new THREE.Points(pGeo, new THREE.PointsMaterial({
+        size: 1.7, map: flameDot, vertexColors: true, transparent: true, opacity: 0.9,
+        depthWrite: false, blending: THREE.AdditiveBlending
+      }));
+      scene.add(exhaust);
+      const cGold = new THREE.Color(0xf5bf27), cRed = new THREE.Color(0xf1372d), cSmoke = new THREE.Color(0x40506e);
+
+      /* ----- subject constellation ----- */
+      const constel = new THREE.Group();
+      const nodePts = [];
+      for (let i = 0; i < 10; i++) {
+        const a = (i / 10) * Math.PI * 2 + (i % 2) * 0.4;
+        const v = new THREE.Vector3(Math.cos(a) * (9 + (i % 3) * 3.4), 33 + Math.sin(i * 1.9) * 5.5, -16 - Math.sin(a) * 7);
+        nodePts.push(v);
+        const node = new THREE.Sprite(new THREE.SpriteMaterial({ map: softDot, color: i % 3 === 0 ? 0xf5bf27 : 0xfff4dd, transparent: true, opacity: 0.95, depthWrite: false, blending: THREE.AdditiveBlending }));
+        node.position.copy(v);
+        node.scale.setScalar(1.6 + (i % 3) * 0.7);
+        constel.add(node);
+      }
+      {
+        const linePos = [];
+        for (let i = 0; i < nodePts.length; i++) {
+          const a = nodePts[i], b = nodePts[(i + 1) % nodePts.length];
+          linePos.push(a.x, a.y, a.z, b.x, b.y, b.z);
+        }
+        const lGeo = new THREE.BufferGeometry();
+        lGeo.setAttribute("position", new THREE.Float32BufferAttribute(linePos, 3));
+        constel.add(new THREE.LineSegments(lGeo, new THREE.LineBasicMaterial({ color: 0xf5bf27, transparent: true, opacity: 0.22, blending: THREE.AdditiveBlending, depthWrite: false })));
+      }
+      scene.add(constel);
+
+      /* ----- the monolith: the real ATAR MAX mark, floating in space ----- */
+      const monolith = new THREE.Group();
+      const markTex = await new Promise((res, rej) => new THREE.TextureLoader().load("images/atar-max-mark.png", res, undefined, rej));
+      markTex.colorSpace = THREE.SRGBColorSpace;
+      const markPlane = new THREE.Mesh(
+        new THREE.PlaneGeometry(9, 9 * (614 / 880)),
+        new THREE.MeshBasicMaterial({ map: markTex, transparent: true, opacity: 0, depthWrite: false })
+      );
+      monolith.add(markPlane);
+      const markHalo = new THREE.Sprite(new THREE.SpriteMaterial({ map: flameDot, color: 0xf48a21, transparent: true, opacity: 0, depthWrite: false, blending: THREE.AdditiveBlending }));
+      markHalo.position.z = -1.5;
+      markHalo.scale.setScalar(20);
+      monolith.add(markHalo);
+      monolith.position.set(0, 35, -14);
+      scene.add(monolith);
+
+      /* ================= scroll choreography ================= */
+      /* keyframes per station: cam pos, cam target, rocketY, enginePower, dawn,
+         constellation opacity, monolith opacity */
+      const K = {
+        pos: [
+          [-4.5, 3.4, 16.5], [-6, 1.8, 9.5], [-7.5, 10, 21], [0, 30, 17],
+          [0, 32.5, 7], [7.5, 34.5, 3], [0, 31.5, 15]
+        ],
+        tgt: [
+          [-1.6, 4.6, 0], [-1.2, 3.2, 0], [2.2, 15, 0], [0, 35.5, -9],
+          [0, 35.8, -14], [0, 35.5, -14], [0, 33.5, -60]
+        ],
+        rocketY: [0, 0, 13, 34, 46, 52, 58],
+        power:   [0.12, 0.85, 1, 0.55, 0.12, 0.08, 0.05],
+        dawn:    [0.16, 0.22, 0.12, 0, 0, 0.08, 1],
+        constel: [0, 0, 0, 1, 0.35, 0.18, 0],
+        mono:    [0, 0, 0, 0, 1, 0.85, 0]
+      };
+
+      let keys = [];
+      function computeKeys() {
+        const docH = document.documentElement.scrollHeight - innerHeight;
+        keys = stations.map((s) => clamp01((s.offsetTop + s.offsetHeight / 2 - innerHeight / 2) / docH));
+        keys[0] = 0;
+        keys[keys.length - 1] = 1;
+      }
+      computeKeys();
+
+      function sample(arr, p) {
+        let i = 0;
+        while (i < keys.length - 2 && p > keys[i + 1]) i++;
+        const t = smooth(clamp01((p - keys[i]) / (keys[i + 1] - keys[i] || 1)));
+        const a = arr[i], b = arr[i + 1];
+        if (Array.isArray(a)) return [lerp(a[0], b[0], t), lerp(a[1], b[1], t), lerp(a[2], b[2], t)];
+        return lerp(a, b, t);
+      }
+
+      /* mouse parallax */
+      let mx = 0, my = 0, mxC = 0, myC = 0;
+      addEventListener("pointermove", (e) => {
+        mx = (e.clientX / innerWidth - 0.5) * 2;
+        my = (e.clientY / innerHeight - 0.5) * 2;
+      }, { passive: true });
+
+      let pCur = 0;
+      const camPos = new THREE.Vector3();
+      const camTgt = new THREE.Vector3();
+      let time = 0;
+      let lastT = performance.now();
+
+      function frame(now) {
+        requestAnimationFrame(frame);
+        if (document.hidden) return;
+        const dt = Math.min(0.05, (now - lastT) / 1000);
+        lastT = now;
+        time += dt;
+
+        const docH = document.documentElement.scrollHeight - innerHeight;
+        const pTgt = clamp01(scrollY / (docH || 1));
+        pCur = lerp(pCur, pTgt, 1 - Math.pow(0.001, dt)); /* framerate-independent glide */
+        mxC = lerp(mxC, mx, 0.04);
+        myC = lerp(myC, my, 0.04);
+
+        const pos = sample(K.pos, pCur);
+        const tgt = sample(K.tgt, pCur);
+        const rktY = sample(K.rocketY, pCur);
+        const power = sample(K.power, pCur);
+        const dawn = sample(K.dawn, pCur);
+        const conOp = sample(K.constel, pCur);
+        const monoOp = sample(K.mono, pCur);
+
+        camPos.set(pos[0] + mxC * 1.4, pos[1] - myC * 0.9, pos[2]);
+        camTgt.set(tgt[0] + mxC * 0.6, tgt[1] - myC * 0.4, tgt[2]);
+        camera.position.copy(camPos);
+        camera.lookAt(camTgt);
+
+        /* rocket */
+        rocket.position.y = rktY;
+        rocket.position.x = Math.sin(time * 0.7) * 0.04 * power;
+        rocket.rotation.z = Math.sin(time * 0.9) * 0.012 * power;
+        const flick = 0.75 + Math.sin(time * 31) * 0.12 + Math.sin(time * 57) * 0.08;
+        flame.material.opacity = power * flick * 0.95;
+        flame.scale.set(1, (0.7 + power * 0.9) * flick, 1);
+        flameGlow.material.opacity = power * flick * 0.75;
+        engineLight.intensity = power * flick * 60;
+        engineLight.position.set(rocket.position.x, rktY + 0.2, 0);
+
+        /* exhaust particles */
+        const pAttr = pGeo.attributes.position, cAttr = pGeo.attributes.color;
+        for (let i = 0; i < PN; i++) {
+          pLife[i] += dt * (0.9 + (i % 5) * 0.08);
+          if (pLife[i] > 1) {
+            if (Math.random() < power) {
+              pLife[i] = 0;
+              const a = Math.random() * Math.PI * 2, r = Math.random() * 0.25;
+              pPos[i * 3] = rocket.position.x + Math.cos(a) * r;
+              pPos[i * 3 + 1] = rktY + 0.4;
+              pPos[i * 3 + 2] = Math.sin(a) * r;
+              pVel[i * 3] = Math.cos(a) * (0.6 + Math.random() * 1.4);
+              pVel[i * 3 + 1] = -(7 + Math.random() * 9);
+              pVel[i * 3 + 2] = Math.sin(a) * (0.6 + Math.random() * 1.4);
+            } else { pLife[i] = 1.001; }
+          }
+          const l = Math.min(pLife[i], 1);
+          pPos[i * 3] += pVel[i * 3] * dt * (1 + l);
+          pPos[i * 3 + 1] += pVel[i * 3 + 1] * dt;
+          pPos[i * 3 + 2] += pVel[i * 3 + 2] * dt;
+          const col = l < 0.25 ? cGold.clone().lerp(cRed, l * 4) : cRed.clone().lerp(cSmoke, (l - 0.25) / 0.75);
+          const fade = 1 - l;
+          cAttr.setXYZ(i, col.r * fade, col.g * fade, col.b * fade);
+        }
+        pAttr.needsUpdate = true;
+        cAttr.needsUpdate = true;
+
+        /* world state */
+        skyUniforms.uDawn.value = 0.12 + dawn * 1.15;
+        sunGlow.material.opacity = dawn * 0.85;
+        sunGlow.scale.setScalar(120 + dawn * 60);
+        constel.children.forEach((ch) => { ch.material.opacity = (ch.isLine || ch.type === "LineSegments" ? 0.22 : 0.95) * conOp; });
+        constel.rotation.y = time * 0.03;
+        markPlane.material.opacity = monoOp;
+        markHalo.material.opacity = monoOp * 0.5;
+        monolith.position.y = 35 + Math.sin(time * 0.8) * 0.35;
+        monolith.rotation.y = Math.sin(time * 0.35) * 0.07;
+        nebulas.forEach((n, i) => { n.position.y += Math.sin(time * 0.2 + i) * 0.004; });
+        starsNear.rotation.y = time * 0.004;
+        starsFar.rotation.y = -time * 0.0018;
+
+        renderer.render(scene, camera);
+      }
+      requestAnimationFrame(frame);
+
+      addEventListener("resize", () => {
+        camera.aspect = innerWidth / innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(innerWidth, innerHeight);
+        computeKeys();
+      });
+    }
   </script>
+
+  <noscript>
+    <style>#world, .scroll-cue { display: none; } .reveal { opacity: 1; transform: none; } body { background: linear-gradient(180deg, #060a14 0%, #131c2e 100%); }</style>
+  </noscript>
 </body>
 </html>
