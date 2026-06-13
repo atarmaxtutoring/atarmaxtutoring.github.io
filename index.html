@@ -198,6 +198,21 @@
     }
     .pill-ghost:hover { background: rgba(255, 255, 255, 0.12); box-shadow: none; }
 
+    /* mobile sticky CTA — thumb-reachable, appears after the hero, hides at the form */
+    .mobile-cta {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translate(-50%, 130px);
+      z-index: 95;
+      box-shadow: 0 14px 40px rgba(241, 55, 45, 0.55);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.5s var(--ease-out), opacity 0.5s var(--ease-out);
+    }
+    .mobile-cta.show { transform: translate(-50%, 0); opacity: 1; pointer-events: auto; }
+    @media (min-width: 761px) { .mobile-cta { display: none; } }
+
     .free-note {
       display: block;
       margin-top: 12px;
@@ -999,8 +1014,8 @@
               </label>
 
               <label>
-                Message
-                <textarea name="message" placeholder="The student's goals, what support you're looking for, and any important details." required></textarea>
+                Message <span style="color: var(--faint); font-weight: 400;">(optional)</span>
+                <textarea name="message" placeholder="The student's goals, what support you're looking for, and any important details."></textarea>
               </label>
 
               <div class="form-status" id="formStatus" role="status"></div>
@@ -1019,6 +1034,8 @@
       </div>
     </section>
   </main>
+
+  <a class="mobile-cta pill" href="#enquire" id="mobileCta">Start free consultation →</a>
 
   <footer class="footer">
     <div class="footer-inner">
@@ -1042,6 +1059,15 @@
     /* ---------- DOM interactions (independent of WebGL) ---------- */
     const nav = document.getElementById("nav");
     addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 30), { passive: true });
+
+    /* mobile sticky CTA — show past the hero, hide once the form section is in view */
+    const mobileCta = document.getElementById("mobileCta");
+    const enquireSec = document.getElementById("enquire");
+    addEventListener("scroll", () => {
+      const r = enquireSec.getBoundingClientRect();
+      const formInView = r.top < innerHeight * 0.78 && r.bottom > 0;
+      mobileCta.classList.toggle("show", scrollY > innerHeight * 0.9 && !formInView);
+    }, { passive: true });
 
     const reveals = document.querySelectorAll(".reveal");
     if (reduceMotion || !("IntersectionObserver" in window)) {
@@ -1141,8 +1167,8 @@
       const skyUniforms = {
         uTop: { value: new THREE.Color(0x05080f) },
         uMid: { value: new THREE.Color(0x131c2e) },
-        uDawnA: { value: new THREE.Color(0xf48a21) },
-        uDawnB: { value: new THREE.Color(0xf1372d) },
+        uDawnA: { value: new THREE.Color(0xf7b13a) },
+        uDawnB: { value: new THREE.Color(0xf2701f) },
         uDawn: { value: 0.15 }
       };
       const sky = new THREE.Mesh(
@@ -1265,6 +1291,8 @@
       }));
       wire.position.y = 0.06;
       scene.add(wire);
+      terrain.scale.set(1.4, 1.32, 1.4);
+      wire.scale.set(1.4, 1.32, 1.4);
 
       /* ----- launch pad ----- */
       const pad = new THREE.Group();
@@ -1403,7 +1431,7 @@
         ],
         rocketY: [0, 0, 13, 34, 46, 52, 58],
         power:   [0.12, 0.85, 1, 0.55, 0.12, 0.08, 0.05],
-        dawn:    [0.16, 0.22, 0.12, 0, 0, 0.08, 1],
+        dawn:    [0.16, 0.2, 0.12, 0, 0, 0.06, 0.68],
         constel: [0, 0, 0, 1, 0.35, 0.18, 0],
         mono:    [0, 0, 0, 0, 1, 0.85, 0]
       };
@@ -1504,7 +1532,7 @@
         cAttr.needsUpdate = true;
 
         /* world state */
-        skyUniforms.uDawn.value = 0.12 + dawn * 1.15;
+        skyUniforms.uDawn.value = 0.1 + dawn * 0.8;
         sunGlow.material.opacity = dawn * 0.85;
         sunGlow.scale.setScalar(120 + dawn * 60);
         constel.children.forEach((ch) => { ch.material.opacity = (ch.isLine || ch.type === "LineSegments" ? 0.22 : 0.95) * conOp; });
